@@ -18,9 +18,7 @@
           tua azienda. Non perdere l'occasione di portare il tuo marketing al
           livello successivo!
         </p>
-        <button class="btn btn-secondary btn-lg btn_scopri">
-          Scopri di più
-        </button>
+        <button class="btn btn-primary btn-lg">Scopri di più</button>
       </div>
 
       <div class="col-md-4">
@@ -55,7 +53,7 @@ export default {
           bio: "Data Analyst & Automation Specialist",
           argument:
             "Strategie per ottimizzare workflow automatizzati, lead nurturing e conversioni.",
-          image: "path/to/francesca.jpg",
+          image: "../assets/francesca.jpg",
         },
         {
           id: 2,
@@ -63,7 +61,7 @@ export default {
           bio: "Data Analyst & Automation Specialist",
           argument:
             "Come usare i dati per ottimizzare le campagne e migliorare il ROI.",
-          image: "path/to/luca.jpg",
+          image: "../assets/luca.jpg",
         },
         {
           id: 3,
@@ -71,7 +69,7 @@ export default {
           bio: "Project ManagerCustomer Success Manager",
           argument:
             "Tecniche per segmentare e personalizzare le comunicazioni, migliorando l'engagement.",
-          image: "path/to/elisa.jpg",
+          image: "../assets/elisa.jpg",
         },
         // Aggiungi altri speaker come necessario
       ],
@@ -84,10 +82,9 @@ export default {
 .intro {
   text-align: left;
 }
-.btn_scopri {
-  color: green;
-}
+
 .webinar_img {
-  width: 70%;
+  width: 100%;
+  height: 650px;
 }
 </style>
