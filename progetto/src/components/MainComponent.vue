@@ -23,7 +23,6 @@
         </button>
       </div>
 
-      <!-- Colonna destra: Cards degli speaker -->
       <div class="col-md-6">
         <!-- Ripeti questo blocco per ogni speaker -->
         <div class="card mb-3" v-for="speaker in speakers" :key="speaker.id">
@@ -51,6 +50,31 @@
 <script>
 export default {
   nome: "MainComponent",
+  data() {
+    return {
+      speakers: [
+        {
+          id: 1,
+          name: "Jane Doe",
+          bio: "Esperta in marketing digitale",
+          image: "path/to/jane.jpg",
+        },
+        {
+          id: 2,
+          name: "John Smith",
+          bio: "Sviluppatore senior",
+          image: "path/to/john.jpg",
+        },
+        {
+          id: 3,
+          name: "Michael Smith",
+          bio: "Project Manager",
+          image: "path/to/michael.jpg",
+        },
+        // Aggiungi altri speaker come necessario
+      ],
+    };
+  },
 };
 </script>
 <!-- eslint-disable prettier/prettier -->
