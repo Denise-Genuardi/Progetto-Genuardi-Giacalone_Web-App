@@ -1,10 +1,22 @@
 <template>
+  <HeaderBar />
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">Prenota</router-link>
   </nav>
   <router-view />
 </template>
+
+<script>
+import HeaderBar from "@/components/HeaderBar.vue";
+
+export default {
+  name: "App",
+  components: {
+    HeaderBar,
+  },
+};
+</script>
 
 <style>
 #app {
