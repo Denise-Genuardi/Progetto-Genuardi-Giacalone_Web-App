@@ -5,7 +5,7 @@
   <div class="container mt-5">
     <div class="row">
       <!-- Colonna sinistra: Descrizione del webinar -->
-      <div class="col-md-6 mb-4 intro">
+      <div class="col-md-8 mb-4 intro">
         <h1>Strategie di Marketing Automation con Reply</h1>
         <p class="lead">Massimizza il Tuo Potenziale</p>
         <p>
@@ -23,23 +23,19 @@
         </button>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-4">
         <!-- Ripeti questo blocco per ogni speaker -->
         <div class="card mb-3" v-for="speaker in speakers" :key="speaker.id">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img
-                :src="speaker.image"
-                class="img-fluid rounded-start"
-                :alt="speaker.name"
-              />
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">{{ speaker.name }}</h5>
-                <p class="card-text">{{ speaker.bio }}</p>
-              </div>
-            </div>
+          <img
+            :src="speaker.image"
+            class="img-fluid rounded-start card-img-top"
+            :alt="speaker.name"
+          />
+
+          <div class="card-body">
+            <h5 class="card-title">{{ speaker.name }}</h5>
+            <p class="card-text">{{ speaker.bio }}</p>
+            <p class="card-text">{{ speaker.argument }}</p>
           </div>
         </div>
       </div>
@@ -55,21 +51,27 @@ export default {
       speakers: [
         {
           id: 1,
-          name: "Jane Doe",
-          bio: "Esperta in marketing digitale",
-          image: "path/to/jane.jpg",
+          name: "Francesca Bianchi",
+          bio: "Data Analyst & Automation Specialist",
+          argument:
+            "Strategie per ottimizzare workflow automatizzati, lead nurturing e conversioni.",
+          image: "path/to/francesca.jpg",
         },
         {
           id: 2,
-          name: "John Smith",
-          bio: "Sviluppatore senior",
-          image: "path/to/john.jpg",
+          name: "Luca Rossi",
+          bio: "Data Analyst & Automation Specialist",
+          argument:
+            "Come usare i dati per ottimizzare le campagne e migliorare il ROI.",
+          image: "path/to/luca.jpg",
         },
         {
           id: 3,
-          name: "Michael Smith",
-          bio: "Project Manager",
-          image: "path/to/michael.jpg",
+          name: "Elisa Moretti",
+          bio: "Project ManagerCustomer Success Manager",
+          argument:
+            "Tecniche per segmentare e personalizzare le comunicazioni, migliorando l'engagement.",
+          image: "path/to/elisa.jpg",
         },
         // Aggiungi altri speaker come necessario
       ],
@@ -83,7 +85,7 @@ export default {
   text-align: left;
 }
 .btn_scopri {
-  background-color: green;
+  color: green;
 }
 .webinar_img {
   width: 70%;
