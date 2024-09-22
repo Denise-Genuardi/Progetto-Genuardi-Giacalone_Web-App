@@ -5,15 +5,18 @@
     <router-link to="/about">Prenota</router-link>
   </nav>
   <router-view />
+  <MainComponent />
 </template>
 
 <script>
 import HeaderBar from "@/components/HeaderBar.vue";
+import MainComponent from "@/components/MainComponent.vue";
 
 export default {
   name: "App",
   components: {
     HeaderBar,
+    MainComponent,
   },
 };
 </script>

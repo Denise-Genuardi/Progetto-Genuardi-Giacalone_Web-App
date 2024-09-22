@@ -1,3 +1,4 @@
+<!-- eslint-disable prettier/prettier -->
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
@@ -10,6 +11,7 @@
     </p>
   </div>
 </template>
+<!-- eslint-disable prettier/prettier -->
 
 <script>
 export default {
@@ -19,6 +21,7 @@ export default {
   },
 };
 </script>
+<!-- eslint-disable prettier/prettier -->
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>

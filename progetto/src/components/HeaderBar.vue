@@ -1,7 +1,7 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
   <header>
-    <img src="../assets/Logo_Reply.png" alt="logo" />
+    <img src="../assets/Logo_Reply.png" alt="logo" class="" />
   </header>
 </template>
 <!-- eslint-disable prettier/prettier -->
@@ -14,12 +14,12 @@ export default {
 <!-- eslint-disable prettier/prettier -->
 
 <style scoped>
-header {
-  background-color: #f8f9fa;
-  padding: 10px;
-  text-align: center;
-}
-h1 {
-  color: #343a40;
+img {
+  width: 15%;
+  height: auto;
+  margin-top: 10px;
+  margin-left: 10px;
+  float: left;
+  margin-right: 10px;
 }
 </style>
