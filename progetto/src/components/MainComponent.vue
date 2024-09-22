@@ -79,8 +79,12 @@ export default {
 </script>
 <!-- eslint-disable prettier/prettier -->
 <style>
+img {
+  margin-bottom: 50px;
+}
 .intro {
   text-align: left;
+  vertical-align: center;
 }
 
 .webinar_img {

@@ -1,19 +1,18 @@
 <template>
   <HeaderBar />
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">Prenota</router-link>
-  </nav>
-  <router-view />
+
+  <FooterBar />
 </template>
 
 <script>
 import HeaderBar from "@/components/HeaderBar.vue";
+import FooterBar from "@/components/FooterBar.vue";
 
 export default {
   name: "App",
   components: {
     HeaderBar,
+    FooterBar,
   },
 };
 </script>
