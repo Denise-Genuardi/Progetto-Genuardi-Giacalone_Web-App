@@ -53,7 +53,7 @@ export default {
           bio: "Data Analyst & Automation Specialist",
           argument:
             "Strategie per ottimizzare workflow automatizzati, lead nurturing e conversioni.",
-          image: "../assets/francesca.jpg",
+          image: require("../assets/francesca.jpg"),
         },
         {
           id: 2,
@@ -61,7 +61,7 @@ export default {
           bio: "Data Analyst & Automation Specialist",
           argument:
             "Come usare i dati per ottimizzare le campagne e migliorare il ROI.",
-          image: "../assets/luca.jpg",
+          image: require("../assets/luca.jpg"),
         },
         {
           id: 3,
@@ -69,7 +69,7 @@ export default {
           bio: "Project ManagerCustomer Success Manager",
           argument:
             "Tecniche per segmentare e personalizzare le comunicazioni, migliorando l'engagement.",
-          image: "../assets/elisa.jpg",
+          image: require("../assets/elisa.jpg"),
         },
         // Aggiungi altri speaker come necessario
       ],

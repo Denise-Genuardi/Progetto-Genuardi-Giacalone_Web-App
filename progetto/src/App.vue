@@ -1,7 +1,13 @@
 <template>
-  <HeaderBar />
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <HeaderBar />
 
-  <FooterBar />
+        <FooterBar />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -16,6 +22,7 @@ export default {
   },
 };
 </script>
+<!-- eslint-disable prettier/prettier -->
 
 <style>
 #app {
