@@ -81,6 +81,8 @@ export default {
 <style>
 img {
   margin-bottom: 50px;
+  width: 100%;
+  height: auto;
 }
 .intro {
   text-align: left;

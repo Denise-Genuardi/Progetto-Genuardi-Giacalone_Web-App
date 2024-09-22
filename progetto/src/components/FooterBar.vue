@@ -4,10 +4,22 @@
   <footer>
     <div class="container">
       <div class="row">
-        <div class="col-4">
+        <div class="col-3">
           <img src="../assets/Logo_Reply.png" alt="logo_reply" class="" />
         </div>
-        <div class="col-4"></div>
+        <div class="col-4">
+          <ul class="not_dot">
+            <li>
+              <router-link to="/">Home</router-link>
+            </li>
+            <li>
+              <router-link to="/about">About</router-link>
+            </li>
+            <li>
+              <router-link to="/prenotazione">Prenota</router-link>
+            </li>
+          </ul>
+        </div>
         <div class="col-4 privacy">
           <p>Policy & Legal</p>
           <ul>
@@ -37,7 +49,7 @@ footer {
   padding-bottom: 50px;
 }
 img {
-  width: 30%;
+  width: 20%;
   height: auto;
   margin-top: 10px;
   margin-left: 10px;
@@ -45,6 +57,12 @@ img {
   margin-right: 10px;
 }
 .privacy {
+  text-align: left;
+}
+.not_dot {
+  list-style-type: none;
+  padding: 0; /* Opzionale, rimuove il padding predefinito */
+  margin-left: 100px;
   text-align: left;
 }
 </style>
