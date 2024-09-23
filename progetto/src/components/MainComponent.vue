@@ -6,7 +6,8 @@
     <div class="row">
       <!-- Colonna sinistra: Descrizione del webinar -->
       <div class="col-md-8 mb-4 intro">
-        <h1>Strategie di Marketing Automation con Reply</h1>
+        <h1>WEBINAR</h1>
+        <h2>Strategie di Marketing Automation con Reply</h2>
         <p class="lead">Massimizza il Tuo Potenziale</p>
         <p>
           Unisciti a noi per un webinar esclusivo in cui esploreremo come Reply
@@ -76,6 +77,7 @@ export default {
     };
   },
 };
+
 </script>
 <!-- eslint-disable prettier/prettier -->
 <style>
