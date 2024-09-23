@@ -1,3 +1,4 @@
+<!-- eslint-disable prettier/prettier -->
 <template>
   <div class="container">
     <div class="row">
@@ -10,6 +11,7 @@
   </div>
 </template>
 
+<!-- eslint-disable prettier/prettier -->
 <script>
 import HeaderBar from "@/components/HeaderBar.vue";
 import FooterBar from "@/components/FooterBar.vue";
@@ -24,6 +26,7 @@ export default {
 </script>
 <!-- eslint-disable prettier/prettier -->
 
+<!-- eslint-disable prettier/prettier -->
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
