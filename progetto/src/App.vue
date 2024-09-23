@@ -3,7 +3,6 @@
     <div class="row">
       <div class="col">
         <HeaderBar />
-
         <FooterBar />
       </div>
     </div>

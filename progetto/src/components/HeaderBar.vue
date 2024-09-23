@@ -6,14 +6,10 @@
         <img src="../assets/Logo_Reply.png" alt="logo" />
       </div>
       <div class="col-2">
-        <button type="button" class="btn btn-outline-secondary">
           <router-link to="/">Home</router-link>
-        </button>
       </div>
       <div class="col-2">
-        <button type="button" class="btn btn-outline-secondary">
           <router-link to="/about">About</router-link>
-        </button>
       </div>
       <div class="col-2">
         <button type="button" class="btn btn-outline-secondary">

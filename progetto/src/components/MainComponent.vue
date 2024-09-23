@@ -1,12 +1,12 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
-  <img src="../assets/teamworking.jpg" alt="webinar" class="webinar_img" />
+  <img src="../assets/teamworking.jpg" alt="webinar" class="webinar_img .img-fluid" />
 
   <div class="container mt-5">
     <div class="row">
       <!-- Colonna sinistra: Descrizione del webinar -->
       <div class="col-md-8 mb-4 intro">
-        <h1>WEBINAR</h1>
+        <h1>{{webinarName}}</h1>
         <h2>Strategie di Marketing Automation con Reply</h2>
         <p class="lead">Massimizza il Tuo Potenziale</p>
         <p>
@@ -19,7 +19,29 @@
           tua azienda. Non perdere l'occasione di portare il tuo marketing al
           livello successivo!
         </p>
-        <button class="btn btn-primary btn-lg">Scopri di più</button>
+        <div class="justify-content-center">
+        <button class="btn btn-primary btn-lg" 
+        style="
+        font-family: IBM Plex Sans JP; 
+        color:#004E59; 
+        border-color:#004E59;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: white; ">Scopri di più</button>
+        <button class="btn btn-primary btn-lg" 
+        style="
+        font-family: IBM Plex Sans JP; 
+        color:white; 
+        border-color:#004E59;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #004E59; 
+        margin-left: 20px;">Prenota ora</button>
+        </div>
       </div>
 
       <div class="col-md-4">
@@ -95,4 +117,5 @@ img {
   width: 100%;
   height: 650px;
 }
+
 </style>
