@@ -46,7 +46,7 @@
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class=" col-md-4">
         <!-- Ripeti questo blocco per ogni speaker -->
         <div class="card mb-3" v-for="speaker in speakers" :key="speaker.id">
           <img
@@ -58,7 +58,16 @@
           <div class="card-body">
             <h5 class="card-title">{{ speaker.name }}</h5>
             <p class="card-text">{{ speaker.bio }}</p>
-            <a class="btn btn-primary" data-bs-toggle="collapse" :href="'#collapse' + speaker.id" role="button" aria-expanded="false" :aria-controls="'collapse' + speaker.id"> Argomento 
+            <a class="btn btn-primary argomento_speaker" 
+            data-bs-toggle="collapse" 
+            :href="'#collapse' + speaker.id" 
+            role="button" aria-expanded="false" 
+            :aria-controls="'collapse' + speaker.id"
+            style= "font-family: IBM Plex Sans JP; 
+        color:white; 
+        padding: 10 px;
+        margin-bottom: 5px;
+        background-color: #004E59;" > Argomento 
             </a>            
             <div class="collapse" :id="'collapse' + speaker.id">
               <div class="card body">
@@ -136,6 +145,17 @@ img {
 p{
   margin-bottom: 50px;
 }
+.argomento_speaker {
+  font-family: IBM Plex Sans JP; 
+        color:#004E59; 
+        border-color:#004E59;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: white; 
+}
+
 
 
 </style>
