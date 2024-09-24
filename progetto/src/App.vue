@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col">
+      <div class="col-12">
         <HeaderBar />
         <FooterBar />
       </div>
@@ -21,6 +21,7 @@ export default {
   },
 };
 </script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -41,5 +42,9 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.container-fluid {
+  width: 100%;
 }
 </style>

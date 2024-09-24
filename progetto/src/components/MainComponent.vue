@@ -1,6 +1,6 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
-  <img src="../assets/teamworking.jpg" alt="webinar" class="webinar_img img-fluid" />
+  <img src="../assets/imgwebinar.png" alt="webinar" class="webinar_img img-fluid" />
 
   <div class="container mt-5">
     <div class="row">
@@ -131,6 +131,8 @@ img {
   border-radius: 8px;
   width: 100%;
   height: auto;
+  display: flex;
+
 }
 .intro {
   text-align: left;
