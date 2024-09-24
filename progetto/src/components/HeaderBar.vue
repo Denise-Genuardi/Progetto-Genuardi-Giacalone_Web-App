@@ -49,7 +49,6 @@ a {
   color: #004E59;
   font-weight: bold;
   font-size: 25px;
-  margin-left: 20px;
 }
 
 a:hover {

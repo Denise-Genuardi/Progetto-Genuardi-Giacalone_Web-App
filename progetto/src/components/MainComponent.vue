@@ -71,7 +71,8 @@
         color:white; 
         padding: 10 px;
         margin-bottom: 5px;
-        background-color: #004E59;" > Argomento 
+        background-color: #004E59;
+        " > Argomento 
             </a>            
             <div class="collapse" :id="'collapse' + speaker.id">
               <div class="card body">

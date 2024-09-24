@@ -1,27 +1,22 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
-<div class="form-container">
-    <!-- Form per inserire i dati -->
+  <div class="form-container">
     <form @submit.prevent="submitForm" class="align-items-center">
-      <!-- Nome e Cognome -->
       <div class="mb-3 d-flex ">
         <label for="nome" class="me-5 label-form">Nome e Cognome*</label>
         <input type="text" v-model="nomeCognome" id="nome" class="form-control w-auto" required />
       </div>
 
-      <!-- Email -->
       <div class="mb-3 d-flex">
         <label for="email" class="me-5">Email*</label>
         <input type="email" v-model="email" id="email" class="form-control w-auto" required />
       </div>
 
-      <!-- Azienda -->
       <div class="mb-3 d-flex">
         <label for="azienda" class="me-5">Azienda</label>
         <input type="text" v-model="azienda" id="azienda" class="form-control w-auto" />
       </div>
 
-      <!-- Numero partecipanti -->
       <div class="mb-2 d-flex">
         <label for="partecipanti" class="me-5">Numero Partecipanti*</label>
         <div class="d-flex">
@@ -32,17 +27,15 @@
       </div>
 
       <!-- Messaggio di errore -->
-      <div v-if="showAlert" class="alert">
+      <div v-if="isAlertVisible" class="alert">
         Non è possibile prenotare meno di 1 posto o più di 10 posti
       </div>
 
-      <!-- Pulsante di invio -->
       <div>
         <button type="submit" class="invio">Invia</button>
       </div>
     </form>
 
-    <!-- Visualizzazione delle prenotazioni -->
     <div v-if="prenotazioni.length > 0" class="prenotazioni-container">
       <h3>Prenotazioni:</h3>
       <ul>
@@ -53,7 +46,6 @@
             <strong>Azienda:</strong> {{ prenotazione.azienda }} <br />
             <strong>Numero Partecipanti:</strong> {{ prenotazione.numeroPartecipanti }}
           </div>
-          <!-- Pulsante per eliminare la prenotazione -->
           <button @click="eliminaPrenotazione(index)">Elimina</button>
         </li>
       </ul>
@@ -63,44 +55,38 @@
 <!-- eslint-disable prettier/prettier -->
 
 <script>
-    export default {
-        name: "FormComponent",
+export default {
+  name: "FormComponent",
   data() {
     return {
       nomeCognome: '',
       email: '',
       azienda: '',
       numeroPartecipanti: 1,
-      showAlert: false,
-      prenotazioni: [], // Lista delle prenotazioni
+      prenotazioni: [],
     };
+  },
+  computed: {
+    isAlertVisible() {
+      return this.numeroPartecipanti < 1 || this.numeroPartecipanti > 10;
+    }
   },
   methods: {
     incrementaPartecipanti() {
-  if (this.numeroPartecipanti < 10) {
-    this.numeroPartecipanti++;
-    this.showAlert = false; // Nasconde l'avviso se tra 1 e 10
-  }
-  if (this.numeroPartecipanti >= 10) {
-    this.showAlert = true; // Mostra l'avviso se >= 10
-  }
-},
-decrementaPartecipanti() {
-  if (this.numeroPartecipanti > 0) {
-    this.numeroPartecipanti--;
-  }
-  if (this.numeroPartecipanti <= 0 || this.numeroPartecipanti > 10) {
-    this.showAlert = true; // Mostra l'avviso se <= 0 o > 10
-  } else {
-    this.showAlert = false; // Nasconde l'avviso se tra 1 e 10
-  }
-},
+      if (this.numeroPartecipanti < 10) {
+        this.numeroPartecipanti++;
+      }
+    },
+    decrementaPartecipanti() {
+      if (this.numeroPartecipanti > 0) {
+        this.numeroPartecipanti--;
+      }
+    },
     submitForm() {
-      // Aggiunge la prenotazione alla lista
       this.prenotazioni.push({
         nomeCognome: this.nomeCognome,
         email: this.email,
-        azienda: this.azienda || 'N/A', // Se l'azienda non è inserita, mostra N/A
+        azienda: this.azienda || 'N/A',
         numeroPartecipanti: this.numeroPartecipanti,
       });
 
@@ -108,11 +94,9 @@ decrementaPartecipanti() {
       this.nomeCognome = '';
       this.email = '';
       this.azienda = '';
-      this.numeroPartecipanti = 0;
-      this.showAlert = false;
+      this.numeroPartecipanti = 1; // Riporta a 1 per evitare problemi
     },
     eliminaPrenotazione(index) {
-      // Rimuove la prenotazione dall'array
       this.prenotazioni.splice(index, 1);
     },
   },
@@ -121,34 +105,26 @@ decrementaPartecipanti() {
 <!-- eslint-disable prettier/prettier -->
 
 <style scoped>
-.form_container {
+.form-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
 }
-/* Stile per l'avviso */
 .alert {
   color: red;
 }
-
-/* Stile per il container delle prenotazioni */
 .prenotazioni-container {
-  margin-top: 20px;
-  padding: 10px;
+
   border: 1px solid #ddd;
   background-color: #f9f9f9;
 }
-
 .prenotazioni-container ul {
   list-style-type: none;
   padding: 0;
 }
-
 .prenotazioni-container li {
   margin-bottom: 10px;
 }
-
 .prenotazioni-container button {
   background-color: red;
   color: white;
@@ -161,20 +137,17 @@ decrementaPartecipanti() {
   color: white;
   border-radius: 20px;
 }
-.invio{
+.invio {
   font-family: IBM Plex Sans JP; 
-  color:white; 
-  border-color:#004E59;
-  padding-top: 10px;
-  padding-left: 30px;
-  padding-bottom: 10px;
-  padding-right: 30px;
+  color: white; 
+  border-color: #004E59;
+  padding: 10px 30px;
   background-color: #004E59; 
   margin-left: 20px;
   margin-top: 50px;
   border-radius: 8px;
 }
-.form-container{
+.form-container {
   background-color: lightgrey;
   padding: 50px;
 }
