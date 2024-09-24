@@ -1,12 +1,12 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
-  <img src="../assets/teamworking.jpg" alt="webinar" class="webinar_img .img-fluid" />
+  <img src="../assets/teamworking.jpg" alt="webinar" class="webinar_img img-fluid" />
 
   <div class="container mt-5">
     <div class="row">
       <!-- Colonna sinistra: Descrizione del webinar -->
       <div class="col-md-8 mb-4 intro">
-        <h1 class="titolo" style="font-size: 30px; margin-top: 50px;">WEBINAR</h1>
+        <h1 class="titolo" style="font-size: 20px; margin-top: 50px;"><b>WEBINAR</b></h1>
         <h2 class="titolo" style="font-size: 40px;"><b>Strategie di Marketing Automation <br/>con Reply</b></h2>
         <h3 class="titolo" style="font-size: 20px; margin-bottom: 30px;"><b>Massimizza il Tuo Potenziale</b></h3>
         <p style="margin-bottom: 20px;">
@@ -21,7 +21,8 @@
           tua azienda. </p>
           <p style="margin-bottom: 50px;" ><b>Non perdere l'occasione di portare il tuo marketing al
             livello successivo!</b></p>
-        <div class="justify-content-center"  style="margin-top: 50px;">
+        <div class="justify-content-center" style="margin-top: 50px;">
+          <router-link to="/about">
         <button class="btn btn-primary btn-lg" 
         style="
         font-family: IBM Plex Sans JP; 
@@ -31,18 +32,22 @@
         padding-right: 20px;
         padding-top: 10px;
         padding-bottom: 10px;
-        background-color: white; ">Scopri di più</button>
-        <button class="btn btn-primary btn-lg" 
-        style="
-        font-family: IBM Plex Sans JP; 
-        color:white; 
-        border-color:#004E59;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        background-color: #004E59; 
-        margin-left: 20px;">Prenota ora</button>
+        background-color: white; ">Scopri di più</button></router-link>
+
+        <router-link to="/prenotazione">
+          <button class="btn btn-primary btn-lg" 
+          style="
+          font-family: IBM Plex Sans JP; 
+          color:white; 
+          border-color:#004E59;
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          background-color: #004E59; 
+          margin-left: 20px;">Prenota ora
+          </button>
+      </router-link>
         </div>
       </div>
 
@@ -147,11 +152,10 @@ img {
 }
 
 .card-img-top {
-  width: 100%; /* Immagine occupa il 100% della larghezza della card */
-  height: auto; /* Mantiene il rapporto di aspetto */
-  object-fit: cover; /* Ridimensiona l'immagine senza deformarla */
-  border-top-left-radius: 8px; /* Arrotonda gli angoli dell'immagine */
-  border-top-right-radius: 8px;
+  border-radius: 8px;
+  width: 50%;
+  height: auto;
+  padding: 5px;
 }
 
 .card-body {

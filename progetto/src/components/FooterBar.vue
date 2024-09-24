@@ -4,8 +4,8 @@
   <footer>
     <div class="container">
       <div class="row">
-        <div class="col-3">
-          <img src="../assets/Logo_Reply.png" alt="logo_reply" class="" />
+        <div class="col-4">
+          <img src="../assets/Logo_Reply.png" alt="logo_reply" class="logo" />
         </div>
         <div class="col-4">
           <ul class="not_dot">
@@ -42,6 +42,7 @@ export default {
 <!-- eslint-disable prettier/prettier -->
 
 <style>
+
 footer {
   background-color: lightgray;
   margin-top: 50px;
@@ -51,10 +52,7 @@ footer {
 img {
   width: 20%;
   height: auto;
-  margin-top: 10px;
-  margin-left: 10px;
   float: left;
-  margin-right: 10px;
 }
 .privacy {
   text-align: left;

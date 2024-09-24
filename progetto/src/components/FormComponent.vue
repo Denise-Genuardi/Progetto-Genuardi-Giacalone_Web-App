@@ -1,11 +1,11 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
-<div>
+<div class="form-container">
     <!-- Form per inserire i dati -->
-    <form @submit.prevent="submitForm">
+    <form @submit.prevent="submitForm" class="align-items-center">
       <!-- Nome e Cognome -->
-      <div class="mb-3 d-flex">
-        <label for="nome" class="me-5">Nome e Cognome*</label>
+      <div class="mb-3 d-flex ">
+        <label for="nome" class="me-5 label-form">Nome e Cognome*</label>
         <input type="text" v-model="nomeCognome" id="nome" class="form-control w-auto" required />
       </div>
 
@@ -121,6 +121,12 @@ decrementaPartecipanti() {
 <!-- eslint-disable prettier/prettier -->
 
 <style scoped>
+.form_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 /* Stile per l'avviso */
 .alert {
   color: red;
