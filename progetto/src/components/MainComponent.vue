@@ -1,6 +1,5 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
-  <img src="../assets/imgwebinar.png" alt="webinar" class="webinar_img img-fluid" />
 
   <div class="container mt-5">
     <div class="row">
@@ -129,9 +128,10 @@ export default {
 img {
   margin-bottom: 20px;
   border-radius: 8px;
-  width: 100%;
+  width: 80%;
   height: auto;
   display: flex;
+
 
 }
 .intro {
@@ -157,12 +157,11 @@ img {
   border-radius: 8px;
   width: 50%;
   height: auto;
-  padding: 5px;
+  padding:10px;
 }
 
 .card-body {
-  padding: 15px; /* Aggiungi spazio interno alla card */
-  text-align: left; /* Allinea il testo a sinistra */
+  text-align: center; /* Allinea il testo a sinistra */
 }
 
 .card-title {
@@ -185,7 +184,7 @@ img {
 
 @media (max-width: 768px) {
   .card {
-    max-width: 100%; /* Su dispositivi mobili, le card occupano l'intera larghezza */
+    max-width: 80%; /* Su dispositivi mobili, le card occupano l'intera larghezza */
   }
 }
 

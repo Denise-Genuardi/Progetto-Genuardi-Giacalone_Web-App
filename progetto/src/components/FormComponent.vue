@@ -25,9 +25,9 @@
       <div class="mb-2 d-flex">
         <label for="partecipanti" class="me-5">Numero Partecipanti*</label>
         <div class="d-flex">
-          <button type="button" @click="decrementaPartecipanti">-</button>
+          <button type="button" @click="decrementaPartecipanti" class="meno">-</button>
           <input type="text" v-model="numeroPartecipanti" id="partecipanti" class="form-control w-auto" />
-          <button type="button" @click="incrementaPartecipanti">+</button>
+          <button type="button" @click="incrementaPartecipanti" class="piu">+</button>
         </div>
       </div>
 
@@ -38,7 +38,7 @@
 
       <!-- Pulsante di invio -->
       <div>
-        <button type="submit">Invia</button>
+        <button type="submit" class="invio">Invia</button>
       </div>
     </form>
 
@@ -156,5 +156,26 @@ decrementaPartecipanti() {
   padding: 5px;
   cursor: pointer;
 }
-
+.meno, .piu {
+  background-color: #004E59;
+  color: white;
+  border-radius: 20px;
+}
+.invio{
+  font-family: IBM Plex Sans JP; 
+  color:white; 
+  border-color:#004E59;
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-bottom: 10px;
+  padding-right: 30px;
+  background-color: #004E59; 
+  margin-left: 20px;
+  margin-top: 50px;
+  border-radius: 8px;
+}
+.form-container{
+  background-color: lightgrey;
+  padding: 50px;
+}
 </style>
