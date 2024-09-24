@@ -137,25 +137,51 @@ img {
   height: 650px;
 }
 
-.titolo {
-  font-family: IBM Plex Sans JP; 
-  padding-bottom: 10px;
-  color: black;
-}
-p{
-  margin-bottom: 50px;
-}
-.argomento_speaker {
-  font-family: IBM Plex Sans JP; 
-        color:#004E59; 
-        border-color:#004E59;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        background-color: white; 
+.card {
+  max-width: 300px; /* Dimensione massima della card */
+  margin: 0 auto; /* Centratura della card */
+  background-color: #f8f9fa; /* Grigio chiarissimo */
+  border: none; /* Rimuove il bordo della card */
+  border-radius: 8px; /* Arrotonda gli angoli */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Aggiunge ombra */
 }
 
+.card-img-top {
+  width: 100%; /* Immagine occupa il 100% della larghezza della card */
+  height: auto; /* Mantiene il rapporto di aspetto */
+  object-fit: cover; /* Ridimensiona l'immagine senza deformarla */
+  border-top-left-radius: 8px; /* Arrotonda gli angoli dell'immagine */
+  border-top-right-radius: 8px;
+}
+
+.card-body {
+  padding: 15px; /* Aggiungi spazio interno alla card */
+  text-align: left; /* Allinea il testo a sinistra */
+}
+
+.card-title {
+  font-size: 18px; /* Dimensione del titolo */
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 14px; /* Dimensione del testo */
+  color: #333;
+}
+
+.argomento_speaker {
+  font-family: IBM Plex Sans JP; 
+  color: white; 
+  border-color: #004E59;
+  padding: 10px;
+  background-color: #004E59; /* Colore del pulsante */
+}
+
+@media (max-width: 768px) {
+  .card {
+    max-width: 100%; /* Su dispositivi mobili, le card occupano l'intera larghezza */
+  }
+}
 
 
 </style>
