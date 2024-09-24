@@ -5,9 +5,11 @@
     <div class="row">
       <!-- Colonna sinistra: Descrizione del webinar -->
       <div class="col-md-8 mb-4 intro">
-        <h1 class="titolo" style="font-size: 20px; margin-top: 50px;"><b>WEBINAR</b></h1>
-        <h2 class="titolo" style="font-size: 40px;"><b>Strategie di Marketing Automation <br/>con Reply</b></h2>
-        <h3 class="titolo" style="font-size: 20px; margin-bottom: 30px;"><b>Massimizza il Tuo Potenziale</b></h3>
+        <h1 style="font-size: 20px;"><b>WEBINAR</b></h1>
+        <h2 style="font-size: 40px;"><b>Strategie di Marketing Automation <br/>con Reply</b></h2>        
+        <img src="../assets/imgwebinar.png" alt="teamworking" class="img-fluid teamworking">
+
+        <h3 class="titolo" style="font-size: 20px; padding-top: 30px; padding-bottom: 20px;"><b>Massimizza il Tuo Potenziale</b></h3>
         <p style="margin-bottom: 20px;">
           Unisciti a noi per un webinar esclusivo in cui esploreremo come Reply
           può rivoluzionare le tue strategie di marketing automation. Scoprirai
@@ -18,8 +20,17 @@
           nostri esperti condivideranno case study reali e best practices,
           offrendoti insight preziosi per implementare soluzioni efficaci nella
           tua azienda. </p>
-          <p style="margin-bottom: 50px;" ><b>Non perdere l'occasione di portare il tuo marketing al
+          <p style="margin-bottom: 20px;" ><b>Non perdere l'occasione di portare il tuo marketing al
             livello successivo!</b></p>
+          <ul>
+            <li><b>Data:</b> 20 marzo 2024</li>
+            <li><b>Ora:</b> 15:30</li>
+            <li><b>Durata:</b> 2 ore 30 minuti</li>
+            <li><b>Modalità:</b> Online, tramite piattaforma Zoom</li>
+            <li><b>Lingua:</b> Italiano</li>
+            <li><b>Costo:</b> Gratuito</li>
+
+          </ul>
         <div class="justify-content-center" style="margin-top: 50px;">
           <router-link to="/about">
         <button class="btn btn-primary btn-lg" 
@@ -51,6 +62,7 @@
       </div>
 
       <div class=" col-md-4">
+        <h2 style="font-size: 20px; padding-bottom: 10px;"><b>I NOSTRI ESPERTI</b></h2>
         <!-- Ripeti questo blocco per ogni speaker -->
         <div class="card mb-3" v-for="speaker in speakers" :key="speaker.id">
           <img
@@ -127,7 +139,6 @@ export default {
 <!-- eslint-disable prettier/prettier -->
 <style>
 img {
-  margin-bottom: 20px;
   border-radius: 8px;
   width: 80%;
   height: auto;
@@ -146,7 +157,7 @@ img {
 }
 
 .card {
-  max-width: 300px; /* Dimensione massima della card */
+  max-width: 350px; /* Dimensione massima della card */
   margin: 0 auto; /* Centratura della card */
   background-color: #f8f9fa; /* Grigio chiarissimo */
   border: none; /* Rimuove il bordo della card */
@@ -187,6 +198,10 @@ img {
   .card {
     max-width: 80%; /* Su dispositivi mobili, le card occupano l'intera larghezza */
   }
+}
+.teamworking {
+  width: auto;
+  height: 100%;
 }
 
 
