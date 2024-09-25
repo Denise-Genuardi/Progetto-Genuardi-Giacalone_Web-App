@@ -1,11 +1,10 @@
-<!-- eslint-disable prettier/prettier -->
 <template>
   <div class="prenotazione">
     <h1 class="iscrizione-text"><b>ISCRIVITI AL WEBINAR</b></h1>
     <h1 class="title"><b>Strategie di Marketing Automation con Reply</b></h1>
   <FormComponent /></div>
 </template>
-<!-- eslint-disable prettier/prettier -->
+
 <script>
 import FormComponent from "@/components/FormComponent.vue";
 
@@ -15,7 +14,7 @@ export default {
     FormComponent,
   },
 };</script>
-<!-- eslint-disable prettier/prettier -->
+
 <style>
 .prenotazione {
   display: flex;

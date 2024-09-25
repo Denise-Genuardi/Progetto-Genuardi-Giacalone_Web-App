@@ -1,4 +1,3 @@
-<!-- eslint-disable prettier/prettier -->
 <template>
   <div class="container header">
     <div class="row align-items-center">
@@ -22,14 +21,12 @@
     <router-view />
   </div>
 </template>
-<!-- eslint-disable prettier/prettier -->
 
 <script>
 export default {
   name: "HeaderBar",
 };
 </script>
-<!-- eslint-disable prettier/prettier -->
 
 <style scoped>
 .header {

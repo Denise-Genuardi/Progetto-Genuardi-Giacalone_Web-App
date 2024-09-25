@@ -1,4 +1,3 @@
-<!-- eslint-disable prettier/prettier -->
 <template>
 
   <div class="container mt-5">
@@ -98,7 +97,7 @@
     </div>
 
 </template>
-<!-- eslint-disable prettier/prettier -->
+
 <script>
 export default {
   nome: "MainComponent",
@@ -136,7 +135,7 @@ export default {
 };
 
 </script>
-<!-- eslint-disable prettier/prettier -->
+
 <style>
 img {
   border-radius: 8px;
