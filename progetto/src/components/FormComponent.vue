@@ -61,10 +61,16 @@
       </div>
     </form>
 
-    <div v-if="prenotazioni.length > 0" class="prenotazioni-container">
+    <div
+      v-if="$store.state.prenotazioni.length > 0"
+      class="prenotazioni-container"
+    >
       <h3>Prenotazioni:</h3>
       <ul>
-        <li v-for="(prenotazione, index) in prenotazioni" :key="index">
+        <li
+          v-for="(prenotazione, index) in $store.state.prenotazioni"
+          :key="index"
+        >
           <div>
             <strong>Nome e Cognome:</strong> {{ prenotazione.nomeCognome }}
             <br />
@@ -89,7 +95,6 @@ export default {
       email: "",
       azienda: "",
       numeroPartecipanti: 1,
-      prenotazioni: [],
     };
   },
   computed: {
@@ -109,21 +114,23 @@ export default {
       }
     },
     submitForm() {
-      this.prenotazioni.push({
+      const prenotazione = {
         nomeCognome: this.nomeCognome,
         email: this.email,
         azienda: this.azienda || "N/A",
         numeroPartecipanti: this.numeroPartecipanti,
-      });
+      };
+
+      this.$store.commit("AGGIUNGI_PRENOTAZIONE", prenotazione); // Usa il commit di Vuex per aggiungere la prenotazione
 
       // Resetta il form dopo l'invio
       this.nomeCognome = "";
       this.email = "";
       this.azienda = "";
-      this.numeroPartecipanti = 1; // Riporta a 1 per evitare problemi
+      this.numeroPartecipanti = 1;
     },
     eliminaPrenotazione(index) {
-      this.prenotazioni.splice(index, 1);
+      this.$store.commit("ELIMINA_PRENOTAZIONE", index); // Usa il commit di Vuex per eliminare la prenotazione
     },
   },
 };
@@ -131,7 +138,6 @@ export default {
 
 <style scoped>
 .form-container {
-  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -141,6 +147,9 @@ export default {
 .prenotazioni-container {
   border: 1px solid #ddd;
   background-color: #f9f9f9;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  width: 800px;
 }
 .prenotazioni-container ul {
   list-style-type: none;
@@ -150,18 +159,15 @@ export default {
   margin-bottom: 10px;
 }
 .prenotazioni-container button {
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 5px;
-  cursor: pointer;
-}
-.meno,
-.piu {
   background-color: #004e59;
   color: white;
-  border-radius: 20px;
+  border: none;
+  padding-left: 5px;
+  padding-right: 5px;
+  cursor: pointer;
+  margin-top: 30px;
 }
+
 .invio {
   font-family: IBM Plex Sans JP;
   color: white;
@@ -175,5 +181,18 @@ export default {
 .form-container {
   background-color: #f7f7f7;
   padding: 50px;
+}
+
+button {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  border-color: #004e59;
+  background-color: #004e59;
+  margin-left: 20px;
+  font-size: 20px;
+  border-radius: 8px;
 }
 </style>
