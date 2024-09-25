@@ -3,7 +3,9 @@
     <div class="row">
       <!-- Colonna sinistra: Descrizione del webinar -->
       <div class="col-md-8 mb-4 intro">
-        <h3 class="webinar-title"><b>WEBINAR</b></h3>
+        <h3 class="webinar-title" :style="{ color: headingColor }">
+          <b>WEBINAR</b>
+        </h3>
         <h1 class="webinar-subtitle">
           <b>Strategie di Marketing Automation <br />con Reply</b>
         </h1>
@@ -13,7 +15,9 @@
           class="img-fluid teamworking"
         />
 
-        <h3 class="webinar-heading"><b>Massimizza il Tuo Potenziale</b></h3>
+        <h3 class="webinar-heading" :style="{ color: headingColor }">
+          <b>Massimizza il Tuo Potenziale</b>
+        </h3>
         <p class="webinar-text">
           Unisciti a noi per un webinar esclusivo in cui esploreremo come Reply
           può rivoluzionare le tue strategie di marketing automation. Scoprirai
@@ -51,7 +55,9 @@
       </div>
 
       <div class="col-md-4">
-        <h3 class="webinar-title"><b>I NOSTRI ESPERTI</b></h3>
+        <h3 class="webinar-title" :style="{ color: headingColor }">
+          <b>I NOSTRI ESPERTI</b>
+        </h3>
         <!-- Ripeti questo blocco per ogni speaker -->
         <div class="card mb-3" v-for="speaker in speakers" :key="speaker.id">
           <img :src="speaker.image" class="card-img-top" :alt="speaker.name" />
@@ -83,9 +89,10 @@
 
 <script>
 export default {
-  nome: "MainComponent",
+  name: "MainComponent",
   data() {
     return {
+      headingColor: "#004e59", // Cambia il colore del titolo in base alla tua logica
       speakers: [
         {
           id: 1,
@@ -106,7 +113,7 @@ export default {
         {
           id: 3,
           name: "Elisa Moretti",
-          bio: "Project ManagerCustomer Success Manager",
+          bio: "Project Manager & Customer Success Manager",
           argument:
             "Tecniche per segmentare e personalizzare le comunicazioni, migliorando l'engagement.",
           image: require("../assets/elisa.jpg"),
@@ -141,6 +148,7 @@ export default {
   display: flex;
   justify-content: center;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .btn-white {
