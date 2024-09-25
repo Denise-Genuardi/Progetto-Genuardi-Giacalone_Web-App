@@ -1,76 +1,141 @@
 <template>
-  <div class="container header">
-    <div class="row align-items-center">
-      <div class="col">
-        <img src="../assets/Logo_Reply.png" alt="logo" />
-      </div>
-      <div class="col text-center">
-        <router-link to="/">Home</router-link>
-      </div>
-      <div class="col text-center">
-        <router-link to="/about">About</router-link>
-      </div>
-      <div class="col text-center">
-        <router-link to="/prenotazione">
-          <button type="button" class="btn btn-outline-secondary">
-            Prenota
-          </button>
-        </router-link>
+  <nav class="navbar navbar-expand-md">
+    <div class="container">
+      <!-- Aggiungi l'evento @click qui -->
+      <a class="navbar-brand" @click="goToHome">
+        <img src="../assets/Logo_Reply.png" alt="logo" class="logo" />
+      </a>
+
+      <!-- Burger Menu per mobile -->
+      <button
+        class="navbar-toggler custom-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menu Items -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item no_btn">
+            <router-link to="/" class="nav-link">Home</router-link>
+          </li>
+          <li class="nav-item no_btn">
+            <router-link to="/about" class="nav-link">About</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/prenotazione" class="nav-link">
+              <button type="button" class="btn btn-outline-secondary">
+                Prenota
+              </button>
+            </router-link>
+          </li>
+        </ul>
       </div>
     </div>
-    <router-view />
-  </div>
+  </nav>
+  <router-view />
 </template>
 
 <script>
 export default {
   name: "HeaderBar",
+  methods: {
+    goToHome() {
+      this.$router.push("/"); // Reindirizza alla home page
+    },
+  },
 };
 </script>
 
 <style scoped>
-.header {
-  padding: 30px;
-  align-items: center;
-}
-
-img {
-  width: 80%;
+/* Dimensione del logo */
+.logo {
+  width: 200px;
   height: auto;
-  float: left;
 }
 
-a {
-  font-family: IBM Plex Sans JP;
-  text-decoration: none;
-  color: #004e59;
-  font-weight: bold;
+/* Stili per i link */
+.nav-link {
+  font-family: "IBM Plex Sans JP";
   font-size: 25px;
+  font-weight: bold;
+  color: #004e59;
+  text-decoration: none;
+  margin-left: 40px;
 }
 
-a:hover {
-  color: #002d34; /* Cambia colore al passaggio del mouse */
+.nav-link:hover {
+  color: #002d34;
 }
 
+.no_btn {
+  padding-top: 8px;
+}
+
+/* Stili per il pulsante */
 button {
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-family: "IBM Plex Sans JP", sans-serif;
+  padding: 10px 20px;
+  font-size: 20px;
   color: white;
   border-color: #004e59;
   background-color: #004e59;
-  margin-left: 20px;
-  font-family: IBM Plex Sans JP;
-  font-size: 20px;
 }
 
 button:hover {
-  background-color: #003d48; /* Scuro al passaggio del mouse */
+  background-color: #003d48;
 }
 
-.col {
-  text-align: center;
+/* Stili per il burger menu */
+.navbar-toggler.custom-toggler {
+  background-color: #004e59;
+  color: white;
+  border-color: #004e59;
+}
+
+/* Stile personalizzato per l'icona del burger menu */
+.navbar-toggler-icon {
+  background-image: none; /* Rimuove l'immagine SVG di default */
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background-color: white; /* Imposta il colore dell'icona */
+  position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+}
+
+.navbar-toggler-icon::before {
+  top: -8px;
+}
+
+.navbar-toggler-icon::after {
+  top: 8px;
+}
+
+/* Spazio extra sotto la navbar per evitare che il contenuto venga coperto */
+body {
+  padding-top: 80px; /* Modifica questa altezza in base all'altezza effettiva della navbar */
+}
+
+/* Stili per schermi piccoli (max-width: 768px) */
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
 }
 </style>
