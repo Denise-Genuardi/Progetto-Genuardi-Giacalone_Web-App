@@ -2,7 +2,8 @@
   <div class="prenotazione">
     <h1 class="iscrizione-text"><b>ISCRIVITI AL WEBINAR</b></h1>
     <h1 class="title"><b>Strategie di Marketing Automation con Reply</b></h1>
-  <FormComponent /></div>
+    <FormComponent />
+  </div>
 </template>
 
 <script>
@@ -13,7 +14,8 @@ export default {
   components: {
     FormComponent,
   },
-};</script>
+};
+</script>
 
 <style>
 .prenotazione {
@@ -38,6 +40,4 @@ export default {
   text-align: center; /* Centra il testo */
   margin-bottom: 50px;
 }
-
-
 </style>
