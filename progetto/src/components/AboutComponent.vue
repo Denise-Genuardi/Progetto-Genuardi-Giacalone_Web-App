@@ -1,11 +1,16 @@
 <template>
-  <div class="about-component">
-    <!-- Sottotitolo e Titolo -->
-    <h3 class="subtitle">{{ subtitle }}</h3>
-    <h1 class="title">{{ title }}</h1>
+  <div class="row mt-4">
+    <div class="row">
+      <!-- Colonna sinistra: Descrizione del webinar -->
+      <div class="col-md-8 mb-4 intro">
+        <h3 class="webinar-title" :style="{ color: headingColor }">
+          <b>WEBINAR</b>
+        </h3>
+        <h1 class="webinar-subtitle">
+          <b>Strategie di Marketing Automation con Reply</b>
+        </h1>
+      </div>
 
-    <!-- Struttura a due colonne con larghezza uguale -->
-    <div class="row mt-4">
       <!-- Colonna sinistra (testo) -->
       <div class="col-md-6">
         <p class="about-text">
@@ -99,7 +104,11 @@ export default {
   text-transform: uppercase;
   font-size: 14px;
   text-align: left;
-  color: #666;
+  color: "#004e59";
+}
+
+.text-left {
+  text-align: left; /* Forza l'allineamento a sinistra */
 }
 
 .title {

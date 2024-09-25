@@ -10,24 +10,24 @@
       </thead>
       <tbody>
         <tr>
-          <td>09:00 - 10:00</td>
-          <td>Introduzione al corso</td>
+          <td>15:30 - 16:00</td>
+          <td>Presentazione del webinar e panoramica dei temi trattati.</td>
         </tr>
         <tr>
-          <td>10:15 - 11:15</td>
-          <td>Prima sessione di laboratorio</td>
+          <td>16:00 - 16:30</td>
+          <td>Automazione delle Campagne con Francesca Bianchi</td>
         </tr>
         <tr>
-          <td>11:30 - 12:30</td>
-          <td>Discussione di gruppo</td>
+          <td>16:30 - 17:00</td>
+          <td>Dati per Aumentare il ROI con Luca Rossi</td>
         </tr>
         <tr>
-          <td>13:00 - 14:00</td>
-          <td>Pranzo</td>
+          <td>17:00:00 - 17:30</td>
+          <td>Automazione e Personalizzazione con Elisa Morett</td>
         </tr>
         <tr>
-          <td>14:15 - 15:15</td>
-          <td>Presentazione finale</td>
+          <td>17:30 - 18:00</td>
+          <td>Sessione Q&A</td>
         </tr>
       </tbody>
     </table>
