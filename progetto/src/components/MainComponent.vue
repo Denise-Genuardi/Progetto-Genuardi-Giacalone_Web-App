@@ -3,8 +3,8 @@
     <div class="row">
       <!-- Colonna sinistra: Descrizione del webinar -->
       <div class="col-md-8 mb-4 intro">
-        <h1 style="font-size: 20px"><b>WEBINAR</b></h1>
-        <h2 style="font-size: 40px">
+        <h1 class="webinar-title"><b>WEBINAR</b></h1>
+        <h2 class="webinar-subtitle">
           <b>Strategie di Marketing Automation <br />con Reply</b>
         </h2>
         <img
@@ -13,24 +13,19 @@
           class="img-fluid teamworking"
         />
 
-        <h3
-          class="titolo"
-          style="font-size: 20px; padding-top: 30px; padding-bottom: 20px"
-        >
-          <b>Massimizza il Tuo Potenziale</b>
-        </h3>
-        <p style="margin-bottom: 20px">
+        <h3 class="webinar-heading"><b>Massimizza il Tuo Potenziale</b></h3>
+        <p class="webinar-text">
           Unisciti a noi per un webinar esclusivo in cui esploreremo come Reply
           può rivoluzionare le tue strategie di marketing automation. Scoprirai
           come ottimizzare le campagne, aumentare l'engagement e migliorare il
           ROI attraverso l'uso intelligente di strumenti di automazione.
         </p>
-        <p style="margin-bottom: 20px">
+        <p class="webinar-text">
           I nostri esperti condivideranno case study reali e best practices,
           offrendoti insight preziosi per implementare soluzioni efficaci nella
           tua azienda.
         </p>
-        <p style="margin-bottom: 20px">
+        <p class="webinar-text">
           <b
             >Non perdere l'occasione di portare il tuo marketing al livello
             successivo!</b
@@ -44,50 +39,19 @@
           <li><b>Lingua:</b> Italiano</li>
           <li><b>Costo:</b> Gratuito</li>
         </ul>
-        <div class="justify-content-center" style="margin-top: 50px">
+        <div class="btn-container">
           <router-link to="/about">
-            <button
-              class="btn btn-primary btn-lg"
-              style="
-                font-family: IBM Plex Sans JP;
-                color: #004e59;
-                border-color: #004e59;
-                padding-left: 20px;
-                padding-right: 20px;
-                padding-top: 10px;
-                padding-bottom: 10px;
-                background-color: white;
-              "
-            >
-              Scopri di più
-            </button></router-link
-          >
+            <button class="btn-white">Scopri di più</button>
+          </router-link>
 
           <router-link to="/prenotazione">
-            <button
-              class="btn btn-primary btn-lg"
-              style="
-                font-family: IBM Plex Sans JP;
-                color: white;
-                border-color: #004e59;
-                padding-left: 20px;
-                padding-right: 20px;
-                padding-top: 10px;
-                padding-bottom: 10px;
-                background-color: #004e59;
-                margin-left: 20px;
-              "
-            >
-              Prenota ora
-            </button>
+            <button class="btn-primary">Prenota ora</button>
           </router-link>
         </div>
       </div>
 
       <div class="col-md-4">
-        <h2 style="font-size: 20px; padding-bottom: 10px">
-          <b>I NOSTRI ESPERTI</b>
-        </h2>
+        <h3 class="webinar-title"><b>I NOSTRI ESPERTI</b></h3>
         <!-- Ripeti questo blocco per ogni speaker -->
         <div class="card mb-3" v-for="speaker in speakers" :key="speaker.id">
           <img :src="speaker.image" class="card-img-top" :alt="speaker.name" />
@@ -96,19 +60,13 @@
             <h5 class="card-title">{{ speaker.name }}</h5>
             <p class="card-text">{{ speaker.bio }}</p>
             <a
-              class="btn btn-primary argomento_speaker"
+              class="btn-primary argomento_speaker"
               data-bs-toggle="collapse"
               :href="'#collapse' + speaker.id"
               role="button"
               aria-expanded="false"
               :aria-controls="'collapse' + speaker.id"
-              style="
-                font-family: IBM Plex Sans JP;
-                color: white;
-                padding: 10 px;
-                margin-bottom: 5px;
-                background-color: #004e59;
-              "
+              style="margin-bottom: 10px"
             >
               Argomento
             </a>
@@ -162,29 +120,71 @@ export default {
 </script>
 
 <style>
+.webinar-title {
+  font-size: 20px;
+}
+
+.webinar-subtitle {
+  font-size: 40px;
+}
+
+.webinar-heading {
+  font-size: 20px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.webinar-text {
+  margin-bottom: 20px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.btn-white {
+  color: #004e59;
+  border-color: #004e59;
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.btn-primary {
+  color: white;
+  border-color: #004e59;
+  padding: 10px 20px;
+  background-color: #004e59;
+  margin-left: 20px;
+  border-radius: 8px;
+}
+
+.expert-title {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
 img {
   border-radius: 8px;
   width: 80%;
   height: auto;
   display: flex;
 }
+
 .intro {
   text-align: left;
   vertical-align: center;
 }
 
-.webinar_img {
-  width: 100%;
-  height: 650px;
-}
-
 .card {
-  max-width: 350px; /* Dimensione massima della card */
-  margin: 0 auto; /* Centratura della card */
-  background-color: #f8f9fa; /* Grigio chiarissimo */
-  border: none; /* Rimuove il bordo della card */
-  border-radius: 8px; /* Arrotonda gli angoli */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Aggiunge ombra */
+  max-width: 350px;
+  margin: 0 auto;
+  background-color: #f8f9fa;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card-img-top {
@@ -195,32 +195,35 @@ img {
 }
 
 .card-body {
-  text-align: center; /* Allinea il testo a sinistra */
+  text-align: center;
 }
 
 .card-title {
-  font-size: 18px; /* Dimensione del titolo */
+  font-size: 18px;
   font-weight: bold;
 }
 
 .card-text {
-  font-size: 14px; /* Dimensione del testo */
+  font-size: 14px;
   color: #333;
 }
 
 .argomento_speaker {
-  font-family: IBM Plex Sans JP;
   color: white;
   border-color: #004e59;
-  padding: 10px;
-  background-color: #004e59; /* Colore del pulsante */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #004e59;
 }
 
 @media (max-width: 768px) {
   .card {
-    max-width: 80%; /* Su dispositivi mobili, le card occupano l'intera larghezza */
+    max-width: 80%;
   }
 }
+
 .teamworking {
   width: auto;
   height: 100%;
