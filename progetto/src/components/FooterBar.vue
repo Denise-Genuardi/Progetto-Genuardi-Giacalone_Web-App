@@ -4,28 +4,28 @@
       <img src="@/assets/Logo_Reply.png" alt="Logo" class="footer-logo" />
       <div class="social-icons">
         <a
-          href="https://https://www.facebook.com/ReplyinUK"
+          href="https://www.facebook.com/ReplyinUK"
           target="_blank"
           rel="noopener noreferrer"
         >
           <img src="@/assets/facebook.png" alt="Facebook" />
         </a>
         <a
-          href="https://https://x.com/Reply_UK"
+          href="https://x.com/Reply_UK"
           target="_blank"
           rel="noopener noreferrer"
         >
           <img src="@/assets/twitter.png" alt="X" />
         </a>
         <a
-          href="https://https://www.linkedin.com/company/reply/"
+          href="https://www.linkedin.com/company/reply/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <img src="@/assets/linkedin.png" alt="Linkedin" />
         </a>
         <a
-          href="https://https://www.xing.com/pages/reply"
+          href="https://www.xing.com/pages/reply"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -65,14 +65,13 @@ export default {
 
 <style scoped>
 .footer {
-  width: 100%; /* Estende il footer su tutta la larghezza */
-  background-color: lightgray;
-  padding-top: 20px;
+  width: 100vw; /* Estende il footer su tutta la larghezza della viewport */
+  background-color: #f7f7f7; /* Colore di sfondo più chiaro */
+  padding: 20px; /* Spaziatura verticale */
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  font-family: IBM Plex Sans JP;
   text-align: center;
 }
 
@@ -80,28 +79,16 @@ export default {
 .footer-center,
 .footer-right {
   flex: 1;
-  margin: 0 20px; /* Aggiunge spazio tra i blocchi */
+  margin: 10px 20px; /* Aggiunge spazio tra i blocchi */
   min-width: 200px; /* Aggiunge una larghezza minima per evitare sovrapposizioni */
-}
-
-.footer-left {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra gli elementi nel blocco di sinistra */
+  align-items: center;
 }
 
-.footer-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centra gli elementi nel blocco centrale */
-  margin-right: auto;
-  margin-top: 15px;
-}
-
+.footer-center,
 .footer-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centra gli elementi nel blocco di destra */
+  padding: 20px;
 }
 
 .footer-right ul {
@@ -135,11 +122,25 @@ export default {
   font-size: 0.8em;
   color: #6c757d;
 }
+
 ul {
   text-align: left;
   list-style-type: none;
-  font-family: IBM Plex Sans JP;
   font-size: 15px;
   line-height: 25px;
+}
+
+/* Media Queries per Responsiveness */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Rende il footer verticale su schermi piccoli */
+    align-items: center; /* Centra gli elementi */
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    margin: 20px; /* Spazio verticale tra i blocchi */
+  }
 }
 </style>
