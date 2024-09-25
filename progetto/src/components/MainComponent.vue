@@ -7,7 +7,7 @@
           <b>WEBINAR</b>
         </h3>
         <h1 class="webinar-subtitle">
-          <b>Strategie di Marketing Automation <br />con Reply</b>
+          <b>Strategie di Marketing Automation con Reply</b>
         </h1>
         <img
           src="../assets/imgwebinar.png"

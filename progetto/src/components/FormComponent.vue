@@ -173,7 +173,7 @@ export default {
   border-radius: 8px;
 }
 .form-container {
-  background-color: lightgrey;
+  background-color: #f7f7f7;
   padding: 50px;
 }
 </style>
