@@ -3,10 +3,10 @@
     <div class="row">
       <!-- Colonna sinistra: Descrizione del webinar -->
       <div class="col-md-8 mb-4 intro">
-        <h1 class="webinar-title"><b>WEBINAR</b></h1>
-        <h2 class="webinar-subtitle">
+        <h3 class="webinar-title"><b>WEBINAR</b></h3>
+        <h1 class="webinar-subtitle">
           <b>Strategie di Marketing Automation <br />con Reply</b>
-        </h2>
+        </h1>
         <img
           src="../assets/imgwebinar.png"
           alt="teamworking"
@@ -66,7 +66,6 @@
               role="button"
               aria-expanded="false"
               :aria-controls="'collapse' + speaker.id"
-              style="margin-bottom: 10px"
             >
               Argomento
             </a>
@@ -145,20 +144,37 @@ export default {
 }
 
 .btn-white {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   color: #004e59;
   border-color: #004e59;
-  padding: 10px 20px;
   background-color: white;
+  margin-left: 20px;
+  font-size: 20px;
   border-radius: 8px;
 }
 
 .btn-primary {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   color: white;
   border-color: #004e59;
-  padding: 10px 20px;
   background-color: #004e59;
   margin-left: 20px;
+  font-size: 20px;
   border-radius: 8px;
+}
+
+.btn-white:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background-color: #003d48; /* Scuro al passaggio del mouse */
 }
 
 .expert-title {
@@ -211,11 +227,10 @@ img {
 .argomento_speaker {
   color: white;
   border-color: #004e59;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 10px 15px;
   background-color: #004e59;
+  text-decoration: none;
+  font-size: 18px;
 }
 
 @media (max-width: 768px) {
@@ -226,6 +241,6 @@ img {
 
 .teamworking {
   width: auto;
-  height: 100%;
+  height: 70%;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="about-component">
     <!-- Sottotitolo e Titolo -->
-    <h5 class="subtitle">{{ subtitle }}</h5>
+    <h3 class="subtitle">{{ subtitle }}</h3>
     <h1 class="title">{{ title }}</h1>
 
     <!-- Struttura a due colonne con larghezza uguale -->

@@ -29,6 +29,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: black;
+  font-family: IBM Plex Sans JP;
 }
 
 nav {
