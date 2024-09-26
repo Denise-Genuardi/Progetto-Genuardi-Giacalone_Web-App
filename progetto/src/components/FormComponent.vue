@@ -58,20 +58,18 @@
               type="button"
               @click="decrementaPartecipanti"
               class="btn btn-outline-secondary"
+              :disabled="numeroPartecipanti <= 1"
             >
               -
             </button>
-            <input
-              type="number"
-              v-model.number="numeroPartecipanti"
-              @input="verificaPartecipanti"
-              id="partecipanti"
-              class="form-control text-center"
-            />
+            <span class="input-group-text text-center" style="width: 60px;">
+              {{ numeroPartecipanti }}
+            </span>
             <button
               type="button"
               @click="incrementaPartecipanti"
               class="btn btn-outline-secondary"
+              :disabled="numeroPartecipanti >= 10"
             >
               +
             </button>
@@ -100,12 +98,10 @@
           class="list-group-item"
         >
           <div>
-            <strong>Nome e Cognome:</strong> {{ prenotazione.nomeCognome
-            }}<br />
+            <strong>Nome e Cognome:</strong> {{ prenotazione.nomeCognome }}<br />
             <strong>Email:</strong> {{ prenotazione.email }}<br />
             <strong>Azienda:</strong> {{ prenotazione.azienda }}<br />
-            <strong>Numero Partecipanti:</strong>
-            {{ prenotazione.numeroPartecipanti }}
+            <strong>Numero Partecipanti:</strong> {{ prenotazione.numeroPartecipanti }}
           </div>
           <button
             @click="eliminaPrenotazione(index)"
@@ -145,13 +141,6 @@ export default {
         this.numeroPartecipanti--;
       }
     },
-    verificaPartecipanti() {
-      if (this.numeroPartecipanti < 1) {
-        this.numeroPartecipanti = 1;
-      } else if (this.numeroPartecipanti > 10) {
-        this.numeroPartecipanti = 10;
-      }
-    },
     submitForm() {
       if (this.isAlertVisible) return;
 
@@ -164,6 +153,7 @@ export default {
 
       this.$store.commit("AGGIUNGI_PRENOTAZIONE", prenotazione);
 
+      // Reset form fields
       this.nomeCognome = "";
       this.email = "";
       this.azienda = "";
@@ -179,10 +169,9 @@ export default {
 <style scoped>
 .form-container {
   background-color: #f7f7f7;
-  padding: 30px;
+  padding-top: 30px;
   border-radius: 8px;
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 700px;
 }
 
 .invio {
@@ -198,14 +187,14 @@ export default {
   padding: 20px;
   border-radius: 8px;
   border: 1px solid #ddd;
+  margin-top: 50px;
 }
 
-.input-group .form-control {
-  max-width: 60px;
-}
-
-.input-group .btn {
-  width: 40px;
+.input-group .input-group-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px; /* Width of the participant number display */
 }
 
 @media (max-width: 768px) {
@@ -213,12 +202,8 @@ export default {
     padding: 20px;
   }
 
-  .input-group .form-control {
-    max-width: 50px;
-  }
-
-  .input-group .btn {
-    width: 35px;
+  .input-group .input-group-text {
+    width: 50px; /* Adjusted width for mobile view */
   }
 }
 </style>
