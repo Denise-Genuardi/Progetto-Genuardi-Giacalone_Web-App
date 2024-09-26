@@ -1,9 +1,5 @@
 <template>
   <div class="prenotazione">
-    <h3 class="webinar-title" :style="{ color: headingColor }">
-      ISCRIVITI AL WEBINAR
-    </h3>
-    <h1 class="title"><b>Strategie di Marketing Automation con Reply</b></h1>
     <FormComponent />
   </div>
 </template>
@@ -25,20 +21,5 @@ export default {
   flex-direction: column; /* Allinea gli elementi verticalmente */
   justify-content: center; /* Centra verticalmente */
   align-items: center; /* Centra orizzontalmente */
-}
-
-.iscrizione-text {
-  font-family: IBM Plex Sans JP;
-  font-size: 20px;
-  text-align: center; /* Centra il testo */
-  margin-top: 0;
-}
-
-.title {
-  font-family: IBM Plex Sans JP;
-  font-size: 40px;
-  color: black;
-  text-align: center; /* Centra il testo */
-  margin-bottom: 50px;
 }
 </style>

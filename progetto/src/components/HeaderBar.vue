@@ -56,6 +56,7 @@ export default {
   height: auto;
   margin-top: 20px;
   margin-left: 50px;
+  cursor: pointer;
 }
 
 .nav-link {
