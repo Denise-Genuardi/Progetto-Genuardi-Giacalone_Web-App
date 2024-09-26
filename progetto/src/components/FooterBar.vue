@@ -3,32 +3,16 @@
     <div class="footer-left">
       <img src="@/assets/Logo_Reply.png" alt="Logo" class="footer-logo" />
       <div class="social-icons">
-        <a
-          href="https://www.facebook.com/ReplyinUK"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://www.facebook.com/ReplyinUK" target="_blank">
           <img src="@/assets/facebook.png" alt="Facebook" />
         </a>
-        <a
-          href="https://x.com/Reply_UK"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://x.com/Reply_UK" target="_blank">
           <img src="@/assets/twitter.png" alt="X" />
         </a>
-        <a
-          href="https://www.linkedin.com/company/reply/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://www.linkedin.com/company/reply/" target="_blank">
           <img src="@/assets/linkedin.png" alt="Linkedin" />
         </a>
-        <a
-          href="https://www.xing.com/pages/reply"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://www.xing.com/pages/reply" target="_blank">
           <img src="@/assets/xing.png" alt="Xing" />
         </a>
       </div>
@@ -36,7 +20,7 @@
     </div>
 
     <div class="footer-center">
-      <h4><b>Contattaci</b></h4>
+      <h4><b>I nostri contatti</b></h4>
       <ul>
         <li>
           <b>Email:</b> <a href="mailto:info@reply.com">info@reply.com</a>
@@ -64,25 +48,28 @@ export default {
 </script>
 
 <style scoped>
+body {
+  margin: 0;
+}
+
 .footer {
-  background-color: #f7f7f7; /* Colore di sfondo più chiaro */
-  padding: 20px; /* Spaziatura verticale */
+  background-color: #f7f7f7;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  flex-wrap: wrap;
   text-align: center;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .footer-left,
 .footer-center,
 .footer-right {
   flex: 1;
-  margin: 10px 20px; /* Aggiunge spazio tra i blocchi */
-  min-width: 200px; /* Aggiunge una larghezza minima per evitare sovrapposizioni */
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 20px;
 }
 
 .footer-center,
@@ -103,7 +90,6 @@ export default {
 
 .social-icons {
   display: flex;
-  align-items: left;
   padding-top: 5px;
 }
 
@@ -139,7 +125,7 @@ ul {
   .footer-left,
   .footer-center,
   .footer-right {
-    margin: 20px; /* Spazio verticale tra i blocchi */
+    margin: 10px; /* Spazio verticale tra i blocchi */
   }
 }
 </style>
