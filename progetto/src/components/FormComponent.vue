@@ -1,4 +1,8 @@
 <template>
+  <h3 class="webinar-title" :style="{ color: headingColor }">
+    ISCRIVITI AL WEBINAR
+  </h3>
+  <h1 class="title"><b>Strategie di Marketing Automation con Reply</b></h1>
   <div class="form-container container">
     <form @submit.prevent="submitForm" class="row g-3">
       <div class="col-12 mb-3 row">
@@ -172,8 +176,10 @@ export default {
 .form-container {
   background-color: #f7f7f7;
   padding-top: 30px;
+  padding-bottom: 30px;
   border-radius: 8px;
   max-width: 700px;
+  margin-bottom: 50px;
 }
 
 .invio {
