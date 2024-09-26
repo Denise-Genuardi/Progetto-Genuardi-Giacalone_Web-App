@@ -1,6 +1,8 @@
 <template>
   <div class="prenotazione">
-    <h3 class="iscrizione-text"><b>ISCRIVITI AL WEBINAR</b></h3>
+    <h3 class="webinar-title" :style="{ color: headingColor }">
+      ISCRIVITI AL WEBINAR
+    </h3>
     <h1 class="title"><b>Strategie di Marketing Automation con Reply</b></h1>
     <FormComponent />
   </div>

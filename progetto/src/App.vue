@@ -19,6 +19,9 @@ export default {
     HeaderBar,
     FooterBar,
   },
+  return: {
+    headingColor: "#004e59",
+  },
 };
 </script>
 
@@ -26,17 +29,5 @@ export default {
 #app {
   font-family: IBM Plex Sans JP;
   text-align: center;
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 20px;
-  color: white;
-  border-color: #004e59;
-  background-color: #004e59;
-}
-
-button:hover {
-  background-color: #003d48;
 }
 </style>

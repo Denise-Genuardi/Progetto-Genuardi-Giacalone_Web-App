@@ -1,13 +1,13 @@
 <template>
   <div class="container mt-5">
     <div class="row">
-      <!-- Colonna sinistra: Descrizione del webinar -->
+      <!-- Colonna sinistra -->
       <div class="col-md-8 mb-4 intro">
-        <h3 class="webinar-title" :style="{ color: headingColor }">
+        <h3 class="webinar-subtitle" :style="{ color: headingColor }">
           <b>WEBINAR</b>
         </h3>
-        <h1 class="webinar-subtitle">
-          <b>Strategie di Marketing Automation con Reply</b>
+        <h1 class="webinar-title">
+          Strategie di Marketing Automation con Reply
         </h1>
         <img
           src="../assets/imgwebinar.png"
@@ -15,7 +15,7 @@
           class="img-fluid teamworking"
         />
 
-        <h3 class="webinar-heading" :style="{ color: headingColor }">
+        <h3 class="webinar-subtitle" :style="{ color: headingColor }" style="margin-top: 50px;">
           <b>Massimizza il Tuo Potenziale</b>
         </h3>
         <p class="webinar-text">
@@ -54,11 +54,12 @@
         </div>
       </div>
 
+      <!-- Colonna sinistra-->
       <div class="col-md-4">
-        <h3 class="webinar-title" :style="{ color: headingColor }">
+        <h3 class="webinar-subtitle" :style="{ color: headingColor }">
           <b>I NOSTRI ESPERTI</b>
         </h3>
-        <!-- Ripeti questo blocco per ogni speaker -->
+
         <div class="card mb-3" v-for="speaker in speakers" :key="speaker.id">
           <img :src="speaker.image" class="card-img-top" :alt="speaker.name" />
 
@@ -92,7 +93,6 @@ export default {
   name: "MainComponent",
   data() {
     return {
-      headingColor: "#004e59", // Cambia il colore del titolo in base alla tua logica
       speakers: [
         {
           id: 1,
@@ -118,7 +118,6 @@ export default {
             "Tecniche per segmentare e personalizzare le comunicazioni, migliorando l'engagement.",
           image: require("../assets/elisa.jpg"),
         },
-        // Aggiungi altri speaker come necessario
       ],
     };
   },
@@ -126,22 +125,20 @@ export default {
 </script>
 
 <style>
-.webinar-title {
+.webinar-subtitle {
   font-size: 20px;
+  font-weight: bold;
 }
 
-.webinar-subtitle {
+.webinar-title {
   font-size: 40px;
 }
 
 .webinar-heading {
   font-size: 20px;
-  padding-top: 30px;
-  padding-bottom: 20px;
-}
-
-.webinar-text {
   margin-bottom: 20px;
+  padding-top: 30px;
+  padding-bottom: 50px;
 }
 
 .btn-container {
@@ -164,6 +161,10 @@ export default {
   border-radius: 8px;
 }
 
+.btn-white:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 .btn-primary {
   padding-left: 30px;
   padding-right: 30px;
@@ -177,24 +178,24 @@ export default {
   border-radius: 8px;
 }
 
-.btn-white:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
 .btn-primary:hover {
   background-color: #003d48; /* Scuro al passaggio del mouse */
 }
 
 .expert-title {
   font-size: 20px;
-  padding-bottom: 10px;
+  font-weight: bold;
 }
 
 img {
   border-radius: 8px;
-  width: 80%;
+  width: 40%;
   height: auto;
   display: flex;
+}
+
+.teamworking {
+  margin-top: 20px;
 }
 
 .intro {
@@ -206,7 +207,7 @@ img {
   max-width: 350px;
   margin: 0 auto;
   background-color: #f8f9fa;
-  border: none;
+  border-color: #004e59;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
