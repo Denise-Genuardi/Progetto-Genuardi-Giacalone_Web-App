@@ -82,16 +82,6 @@
 <script>
 export default {
   name: "AboutComponent",
-  props: {
-    subtitle: {
-      type: String,
-      required: true,
-    },
-    title: {
-      type: String,
-      required: true,
-    },
-  },
 };
 </script>
 
