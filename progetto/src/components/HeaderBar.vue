@@ -70,10 +70,6 @@ export default {
   margin-left: 40px;
 }
 
-.nav-link:hover {
-  color: #002d34;
-}
-
 .no_btn {
   padding-top: 8px;
 }

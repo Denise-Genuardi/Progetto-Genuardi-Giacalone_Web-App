@@ -62,7 +62,7 @@
             >
               -
             </button>
-            <span class="input-group-text text-center" style="width: 60px;">
+            <span class="input-group-text text-center" style="width: 60px">
               {{ numeroPartecipanti }}
             </span>
             <button
@@ -98,10 +98,12 @@
           class="list-group-item"
         >
           <div>
-            <strong>Nome e Cognome:</strong> {{ prenotazione.nomeCognome }}<br />
+            <strong>Nome e Cognome:</strong> {{ prenotazione.nomeCognome
+            }}<br />
             <strong>Email:</strong> {{ prenotazione.email }}<br />
             <strong>Azienda:</strong> {{ prenotazione.azienda }}<br />
-            <strong>Numero Partecipanti:</strong> {{ prenotazione.numeroPartecipanti }}
+            <strong>Numero Partecipanti:</strong>
+            {{ prenotazione.numeroPartecipanti }}
           </div>
           <button
             @click="eliminaPrenotazione(index)"
