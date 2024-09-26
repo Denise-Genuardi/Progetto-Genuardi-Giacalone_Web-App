@@ -104,7 +104,6 @@ export default {
   text-transform: uppercase;
   font-size: 20px;
   text-align: left;
-  color: #004e59;
 }
 
 .webinar-subtitle {

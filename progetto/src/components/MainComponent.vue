@@ -10,7 +10,7 @@
           Strategie di Marketing Automation con Reply
         </h1>
         <img
-          src="../assets/imgwebinar.png"
+          v-bind:src="homeImage"
           alt="teamworking"
           class="img-fluid teamworking"
         />
@@ -97,6 +97,7 @@ export default {
   name: "MainComponent",
   data() {
     return {
+      homeImage: require("../assets/teamworking.jpg"),
       speakers: [
         {
           id: 1,
