@@ -1,12 +1,11 @@
 <template>
   <nav class="navbar navbar-expand-md">
     <div class="container-fluid">
-      <!-- Aggiungi l'evento @click qui -->
       <a class="navbar-brand" @click="goToHome">
         <img src="../assets/Logo_Reply.png" alt="logo" class="logo" />
       </a>
 
-      <!-- Burger Menu per mobile -->
+      <!-- Burger Menu -->
       <button
         class="navbar-toggler custom-toggler"
         type="button"
@@ -30,9 +29,7 @@
           </li>
           <li class="nav-item">
             <router-link to="/prenotazione" class="nav-link">
-              <button type="button" class="btn btn-outline-secondary">
-                Iscriviti
-              </button>
+              <button type="button" class="btn-custom">Iscriviti</button>
             </router-link>
           </li>
         </ul>
@@ -47,91 +44,80 @@ export default {
   name: "HeaderBar",
   methods: {
     goToHome() {
-      this.$router.push("/"); // Reindirizza alla home page
+      this.$router.push("/");
     },
   },
 };
 </script>
 
 <style scoped>
-/* Dimensione del logo */
 .logo {
   width: 200px;
   height: auto;
+  margin-top: 20px;
+  margin-left: 50px;
 }
 
-/* Stili per i link */
 .nav-link {
-  font-family: "IBM Plex Sans JP";
   font-size: 25px;
   font-weight: bold;
   color: #004e59;
   text-decoration: none;
-  margin-left: 40px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.router-link-active {
+  text-decoration: underline;
 }
 
 .no_btn {
-  padding-top: 8px;
+  padding-top: 10px;
 }
 
-/* Stili per il pulsante */
-button {
+.btn-custom {
   padding: 10px 20px;
   font-size: 20px;
   color: white;
   border-color: #004e59;
   background-color: #004e59;
+  margin-top: 3px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-button:hover {
+.btn-custom:hover {
   background-color: #003d48;
 }
 
-/* Stili per il burger menu */
+.router-link-active .btn-custom {
+  background-color: white;
+  color: #004e59;
+  font-weight: bold;
+}
+
 .navbar-toggler.custom-toggler {
   background-color: #004e59;
   color: white;
   border-color: #004e59;
 }
 
-/* Stile personalizzato per l'icona del burger menu */
 .navbar-toggler-icon {
-  background-image: none; /* Rimuove l'immagine SVG di default */
-  display: inline-block;
-  width: 24px;
-  height: 2px;
-  background-color: white; /* Imposta il colore dell'icona */
-  position: relative;
-}
-
-.navbar-toggler-icon::before,
-.navbar-toggler-icon::after {
-  content: "";
+  background-image: none;
   display: inline-block;
   width: 24px;
   height: 2px;
   background-color: white;
-  position: absolute;
-  left: 0;
+  position: relative;
 }
 
-.navbar-toggler-icon::before {
-  top: -8px;
-}
-
-.navbar-toggler-icon::after {
-  top: 8px;
-}
-
-/* Spazio extra sotto la navbar per evitare che il contenuto venga coperto */
-body {
-  padding-top: 80px; /* Modifica questa altezza in base all'altezza effettiva della navbar */
-}
-
-/* Stili per schermi piccoli (max-width: 768px) */
 @media (max-width: 768px) {
   .navbar-nav {
     text-align: center;
+  }
+  .logo {
+    margin-top: 0;
+    margin-left: 0;
   }
 }
 </style>

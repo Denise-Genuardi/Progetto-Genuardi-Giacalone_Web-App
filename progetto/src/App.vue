@@ -25,27 +25,18 @@ export default {
 <style>
 #app {
   font-family: IBM Plex Sans JP;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: black;
-  font-family: IBM Plex Sans JP;
 }
 
-nav {
-  padding: 30px;
+button {
+  padding: 10px 20px;
+  font-size: 20px;
+  color: white;
+  border-color: #004e59;
+  background-color: #004e59;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-
-.container-fluid {
-  width: 100%;
+button:hover {
+  background-color: #003d48;
 }
 </style>
