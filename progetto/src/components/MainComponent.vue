@@ -48,13 +48,12 @@
           <li><b>Costo:</b> Gratuito</li>
         </ul>
         <div class="btn-container">
-          <router-link to="/about">
-            <button class="btn-white">Scopri di più</button>
-          </router-link>
-
-          <router-link to="/prenotazione">
-            <button class="btn-primary">Iscriviti ora</button>
-          </router-link>
+          <button class="btn-white" v-on:click="goToAbout">
+            Scopri di più
+          </button>
+          <button class="btn-primary" v-on:click="subscribeNow">
+            Iscriviti ora
+          </button>
         </div>
       </div>
 
@@ -129,6 +128,14 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    goToAbout() {
+      this.$router.push("/about"); // Naviga alla pagina "about"
+    },
+    subscribeNow() {
+      this.$router.push("/prenotazione"); // Naviga alla pagina di prenotazione
+    },
   },
 };
 </script>

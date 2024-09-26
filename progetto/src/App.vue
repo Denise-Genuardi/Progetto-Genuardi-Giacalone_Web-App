@@ -29,5 +29,6 @@ export default {
 #app {
   font-family: IBM Plex Sans JP;
   text-align: center;
+  display: flex;
 }
 </style>
