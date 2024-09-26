@@ -49,7 +49,7 @@
           </router-link>
 
           <router-link to="/prenotazione">
-            <button class="btn-primary">Prenota ora</button>
+            <button class="btn-primary">Iscriviti ora</button>
           </router-link>
         </div>
       </div>

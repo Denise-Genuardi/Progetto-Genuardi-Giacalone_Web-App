@@ -10,7 +10,7 @@
     </p>
     <div class="text-center">
       <router-link to="/prenotazione">
-        <button class="btn-primary">Registrati</button>
+        <button class="btn-primary">Iscriviti</button>
       </router-link>
     </div>
   </div>

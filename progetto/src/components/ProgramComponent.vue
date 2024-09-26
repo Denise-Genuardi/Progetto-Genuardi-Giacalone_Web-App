@@ -23,7 +23,7 @@
         </tr>
         <tr>
           <td>17:00:00 - 17:30</td>
-          <td>Automazione e Personalizzazione con Elisa Morett</td>
+          <td>Automazione e Personalizzazione con Elisa Moretto</td>
         </tr>
         <tr>
           <td>17:30 - 18:00</td>

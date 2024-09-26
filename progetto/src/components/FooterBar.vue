@@ -65,7 +65,6 @@ export default {
 
 <style scoped>
 .footer {
-  width: 100vw; /* Estende il footer su tutta la larghezza della viewport */
   background-color: #f7f7f7; /* Colore di sfondo più chiaro */
   padding: 20px; /* Spaziatura verticale */
   display: flex;

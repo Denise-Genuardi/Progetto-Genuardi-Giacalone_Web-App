@@ -23,7 +23,6 @@ export default {
   flex-direction: column; /* Allinea gli elementi verticalmente */
   justify-content: center; /* Centra verticalmente */
   align-items: center; /* Centra orizzontalmente */
-  height: 100vh; /* Fa sì che l'altezza sia 100% della viewport */
 }
 
 .iscrizione-text {

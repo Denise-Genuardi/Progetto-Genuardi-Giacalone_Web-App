@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-md">
-    <div class="container">
+    <div class="container-fluid">
       <!-- Aggiungi l'evento @click qui -->
       <a class="navbar-brand" @click="goToHome">
         <img src="../assets/Logo_Reply.png" alt="logo" class="logo" />
@@ -31,7 +31,7 @@
           <li class="nav-item">
             <router-link to="/prenotazione" class="nav-link">
               <button type="button" class="btn btn-outline-secondary">
-                Prenota
+                Iscriviti
               </button>
             </router-link>
           </li>

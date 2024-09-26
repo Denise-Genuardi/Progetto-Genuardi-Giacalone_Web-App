@@ -1,85 +1,118 @@
 <template>
-  <div class="form-container">
-    <form @submit.prevent="submitForm" class="align-items-center">
-      <div class="mb-3 d-flex">
-        <label for="nome" class="me-5 label-form">Nome e Cognome*</label>
-        <input
-          type="text"
-          v-model="nomeCognome"
-          id="nome"
-          class="form-control w-auto"
-          required
-        />
-      </div>
-
-      <div class="mb-3 d-flex">
-        <label for="email" class="me-5">Email*</label>
-        <input
-          type="email"
-          v-model="email"
-          id="email"
-          class="form-control w-auto"
-          required
-        />
-      </div>
-
-      <div class="mb-3 d-flex">
-        <label for="azienda" class="me-5">Azienda</label>
-        <input
-          type="text"
-          v-model="azienda"
-          id="azienda"
-          class="form-control w-auto"
-        />
-      </div>
-
-      <div class="mb-2 d-flex">
-        <label for="partecipanti" class="me-5">Numero Partecipanti*</label>
-        <div class="d-flex">
-          <button type="button" @click="decrementaPartecipanti" class="meno">
-            -
-          </button>
+  <div class="form-container container">
+    <form @submit.prevent="submitForm" class="row g-3">
+      <div class="col-12 mb-3 row">
+        <label for="nome" class="col-sm-3 col-form-label text-sm-end">
+          Nome e Cognome*
+        </label>
+        <div class="col-sm-9">
           <input
             type="text"
-            v-model="numeroPartecipanti"
-            id="partecipanti"
-            class="form-control w-auto"
+            v-model="nomeCognome"
+            id="nome"
+            class="form-control"
+            required
+            placeholder="Inserisci il tuo nome e cognome"
           />
-          <button type="button" @click="incrementaPartecipanti" class="piu">
-            +
-          </button>
         </div>
       </div>
 
-      <!-- Messaggio di errore -->
-      <div v-if="isAlertVisible" class="alert">
+      <div class="col-12 mb-3 row">
+        <label for="email" class="col-sm-3 col-form-label text-sm-end">
+          Email*
+        </label>
+        <div class="col-sm-9">
+          <input
+            type="email"
+            v-model="email"
+            id="email"
+            class="form-control"
+            required
+            placeholder="Inserisci la tua email"
+          />
+        </div>
+      </div>
+
+      <div class="col-12 mb-3 row">
+        <label for="azienda" class="col-sm-3 col-form-label text-sm-end">
+          Azienda
+        </label>
+        <div class="col-sm-9">
+          <input
+            type="text"
+            v-model="azienda"
+            id="azienda"
+            class="form-control"
+            placeholder="Inserisci il nome dell'azienda"
+          />
+        </div>
+      </div>
+
+      <div class="col-12 mb-3 row align-items-center">
+        <label for="partecipanti" class="col-sm-3 col-form-label text-sm-end">
+          Numero Partecipanti*
+        </label>
+        <div class="col-sm-9">
+          <div class="input-group">
+            <button
+              type="button"
+              @click="decrementaPartecipanti"
+              class="btn btn-outline-secondary"
+            >
+              -
+            </button>
+            <input
+              type="number"
+              v-model.number="numeroPartecipanti"
+              @input="verificaPartecipanti"
+              id="partecipanti"
+              class="form-control text-center"
+            />
+            <button
+              type="button"
+              @click="incrementaPartecipanti"
+              class="btn btn-outline-secondary"
+            >
+              +
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div v-if="isAlertVisible" class="col-12 alert alert-danger">
         Non è possibile prenotare meno di 1 posto o più di 10 posti
       </div>
 
-      <div>
-        <button type="submit" class="invio">Invia</button>
+      <div class="col-12 text-center">
+        <button type="submit" class="btn invio">Invia</button>
       </div>
     </form>
 
     <div
       v-if="$store.state.prenotazioni.length > 0"
-      class="prenotazioni-container"
+      class="prenotazioni-container container mt-4"
     >
-      <h3>Prenotazioni:</h3>
-      <ul>
+      <h3 class="mb-3">Prenotazioni:</h3>
+      <ul class="list-group">
         <li
           v-for="(prenotazione, index) in $store.state.prenotazioni"
           :key="index"
+          class="list-group-item"
         >
           <div>
-            <strong>Nome e Cognome:</strong> {{ prenotazione.nomeCognome }}
-            <br />
-            <strong>Email:</strong> {{ prenotazione.email }} <br />
-            <strong>Azienda:</strong> {{ prenotazione.azienda }} <br />
+            <strong>Nome e Cognome:</strong> {{ prenotazione.nomeCognome
+            }}<br />
+            <strong>Email:</strong> {{ prenotazione.email }}<br />
+            <strong>Azienda:</strong> {{ prenotazione.azienda }}<br />
             <strong>Numero Partecipanti:</strong>
             {{ prenotazione.numeroPartecipanti }}
           </div>
-          <button @click="eliminaPrenotazione(index)">Elimina</button>
+          <button
+            @click="eliminaPrenotazione(index)"
+            class="btn btn-danger btn-sm mt-2"
+          >
+            Elimina
+          </button>
         </li>
       </ul>
     </div>
@@ -88,7 +121,6 @@
 
 <script>
 export default {
-  name: "FormComponent",
   data() {
     return {
       nomeCognome: "",
@@ -109,11 +141,20 @@ export default {
       }
     },
     decrementaPartecipanti() {
-      if (this.numeroPartecipanti > 0) {
+      if (this.numeroPartecipanti > 1) {
         this.numeroPartecipanti--;
       }
     },
+    verificaPartecipanti() {
+      if (this.numeroPartecipanti < 1) {
+        this.numeroPartecipanti = 1;
+      } else if (this.numeroPartecipanti > 10) {
+        this.numeroPartecipanti = 10;
+      }
+    },
     submitForm() {
+      if (this.isAlertVisible) return;
+
       const prenotazione = {
         nomeCognome: this.nomeCognome,
         email: this.email,
@@ -121,16 +162,15 @@ export default {
         numeroPartecipanti: this.numeroPartecipanti,
       };
 
-      this.$store.commit("AGGIUNGI_PRENOTAZIONE", prenotazione); // Usa il commit di Vuex per aggiungere la prenotazione
+      this.$store.commit("AGGIUNGI_PRENOTAZIONE", prenotazione);
 
-      // Resetta il form dopo l'invio
       this.nomeCognome = "";
       this.email = "";
       this.azienda = "";
       this.numeroPartecipanti = 1;
     },
     eliminaPrenotazione(index) {
-      this.$store.commit("ELIMINA_PRENOTAZIONE", index); // Usa il commit di Vuex per eliminare la prenotazione
+      this.$store.commit("ELIMINA_PRENOTAZIONE", index);
     },
   },
 };
@@ -138,61 +178,47 @@ export default {
 
 <style scoped>
 .form-container {
-  justify-content: center;
-  align-items: center;
-}
-.alert {
-  color: red;
-}
-.prenotazioni-container {
-  border: 1px solid #ddd;
-  background-color: #f9f9f9;
-  margin-top: 30px;
-  margin-bottom: 50px;
-  width: 800px;
-}
-.prenotazioni-container ul {
-  list-style-type: none;
-  padding: 0;
-}
-.prenotazioni-container li {
-  margin-bottom: 10px;
-}
-.prenotazioni-container button {
-  background-color: #004e59;
-  color: white;
-  border: none;
-  padding-left: 5px;
-  padding-right: 5px;
-  cursor: pointer;
-  margin-top: 30px;
+  background-color: #f7f7f7;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .invio {
-  font-family: IBM Plex Sans JP;
   color: white;
   border-color: #004e59;
   padding: 10px 30px;
   background-color: #004e59;
-  margin-left: 20px;
-  margin-top: 50px;
   border-radius: 8px;
-}
-.form-container {
-  background-color: #f7f7f7;
-  padding: 50px;
 }
 
-button {
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: white;
-  border-color: #004e59;
-  background-color: #004e59;
-  margin-left: 20px;
-  font-size: 20px;
+.prenotazioni-container {
+  background-color: #f9f9f9;
+  padding: 20px;
   border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.input-group .form-control {
+  max-width: 60px;
+}
+
+.input-group .btn {
+  width: 40px;
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    padding: 20px;
+  }
+
+  .input-group .form-control {
+    max-width: 50px;
+  }
+
+  .input-group .btn {
+    width: 35px;
+  }
 }
 </style>
