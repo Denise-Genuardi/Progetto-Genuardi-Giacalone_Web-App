@@ -6,9 +6,10 @@
         <h3 class="webinar-subtitle" :style="{ color: headingColor }">
           <b>WEBINAR</b>
         </h3>
-        <h1 class="webinar-title">
-          Strategie di Marketing Automation con Reply
-        </h1>
+        <TitleComponent
+          titleText="Strategie di Marketing Automation con Reply"
+        />
+
         <img
           v-bind:src="homeImage"
           alt="teamworking"
@@ -96,6 +97,7 @@
 </template>
 
 <script>
+import TitleComponent from "@/components/TitleComponent.vue";
 export default {
   name: "MainComponent",
   data() {
@@ -136,6 +138,9 @@ export default {
     subscribeNow() {
       this.$router.push("/prenotazione"); // Naviga alla pagina di prenotazione
     },
+  },
+  components: {
+    TitleComponent,
   },
 };
 </script>

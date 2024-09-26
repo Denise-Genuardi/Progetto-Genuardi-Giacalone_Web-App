@@ -1,8 +1,8 @@
 <template>
-  <h3 class="webinar-title" :style="{ color: headingColor }">
+  <h3 class="webinar-subtitle" :style="{ color: headingColor }">
     ISCRIVITI AL WEBINAR
   </h3>
-  <h1 class="title"><b>Strategie di Marketing Automation con Reply</b></h1>
+  <TitleComponent titleText="Strategie di Marketing Automation con Reply" />
   <div class="form-container container">
     <form @submit.prevent="submitForm" class="row g-3">
       <div class="col-12 mb-3 row">
@@ -122,7 +122,11 @@
 </template>
 
 <script>
+import TitleComponent from "@/components/TitleComponent.vue";
 export default {
+  components: {
+    TitleComponent,
+  },
   data() {
     return {
       nomeCognome: "",

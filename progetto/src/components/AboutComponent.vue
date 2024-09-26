@@ -3,28 +3,27 @@
     <div class="row">
       <!-- Colonna sinistra: Titolo e Testo -->
       <div class="col-md-7">
-        <div class="intro">
-          <h3 class="webinar-title" :style="{ color: headingColor }">
-            <b>WEBINAR</b>
-          </h3>
-          <h1 class="webinar-subtitle">
-            <b>Strategie di Marketing Automation con Reply</b>
-          </h1>
-          <p class="about-text">
-            Il mondo del marketing è in continua evoluzione e le aziende devono
-            adattarsi rapidamente per mantenere un vantaggio competitivo.
-          </p>
-          <p class="about-text">
-            In questo webinar, scoprirai come Reply può aiutarti a rivoluzionare
-            le tue strategie di marketing automation, ottimizzando ogni fase
-            delle tue campagne, dall'acquisizione del lead fino alla conversione
-            e oltre. Durante l'evento, i nostri esperti ti guideranno attraverso
-            esempi pratici e case study di successo, mostrandoti come sfruttare
-            al meglio i dati, segmentare il pubblico e automatizzare i processi
-            chiave. Questo webinar ti fornirà insight e strumenti immediatamente
-            applicabili per migliorare l'efficienza e aumentare il ROI.
-          </p>
-        </div>
+        <h3 class="webinar-subtitle" :style="{ color: headingColor }">
+          <b>WEBINAR</b>
+        </h3>
+        <TitleComponent
+          titleText="Strategie di Marketing Automation con Reply"
+        />
+
+        <p class="about-text">
+          Il mondo del marketing è in continua evoluzione e le aziende devono
+          adattarsi rapidamente per mantenere un vantaggio competitivo.
+        </p>
+        <p class="about-text">
+          In questo webinar, scoprirai come Reply può aiutarti a rivoluzionare
+          le tue strategie di marketing automation, ottimizzando ogni fase delle
+          tue campagne, dall'acquisizione del lead fino alla conversione e
+          oltre. Durante l'evento, i nostri esperti ti guideranno attraverso
+          esempi pratici e case study di successo, mostrandoti come sfruttare al
+          meglio i dati, segmentare il pubblico e automatizzare i processi
+          chiave. Questo webinar ti fornirà insight e strumenti immediatamente
+          applicabili per migliorare l'efficienza e aumentare il ROI.
+        </p>
       </div>
 
       <!-- Colonna destra: Carosello di immagini Bootstrap -->
@@ -80,8 +79,13 @@
 </template>
 
 <script>
+import TitleComponent from "@/components/TitleComponent.vue";
+
 export default {
   name: "AboutComponent",
+  components: {
+    TitleComponent,
+  },
 };
 </script>
 
@@ -97,10 +101,10 @@ export default {
 }
 
 .webinar-subtitle {
-  font-size: 36px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
   text-align: left;
-  color: #333;
-  margin-top: 10px;
 }
 
 .about-text {
