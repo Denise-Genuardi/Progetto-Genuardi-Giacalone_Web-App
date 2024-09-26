@@ -58,20 +58,24 @@
         </div>
       </div>
 
-      <!-- Colonna sinistra-->
+      <!-- Colonna destra -->
       <div class="col-md-4">
-        <h3 class="webinar-subtitle" :style="{ color: headingColor }">
+        <h3 class="webinar-subtitle">
           <b>I NOSTRI ESPERTI</b>
         </h3>
 
-        <div class="card mb-3" v-for="speaker in speakers" :key="speaker.id">
-          <img :src="speaker.image" class="card-img-top" :alt="speaker.name" />
+        <div
+          class="card mb-3"
+          v-for="speaker in speakers"
+          :key="`speaker-${speaker.id}`"
+        >
+          <img :src="speaker.image" class="card-img" :alt="speaker.name" />
 
           <div class="card-body">
             <h5 class="card-title">{{ speaker.name }}</h5>
             <p class="card-text">{{ speaker.bio }}</p>
-            <a
-              class="btn-primary argomento_speaker"
+            <button
+              class="argomento_speaker"
               data-bs-toggle="collapse"
               :href="'#collapse' + speaker.id"
               role="button"
@@ -79,10 +83,10 @@
               :aria-controls="'collapse' + speaker.id"
             >
               Argomento
-            </a>
+            </button>
             <div class="collapse" :id="'collapse' + speaker.id">
-              <div class="card body">
-                <p class="card-text card-body">{{ speaker.argument }}</p>
+              <div class="card-body">
+                <p class="card-text">{{ speaker.argument }}</p>
               </div>
             </div>
           </div>
@@ -132,17 +136,22 @@ export default {
 .webinar-subtitle {
   font-size: 20px;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .webinar-title {
   font-size: 40px;
+  margin-bottom: 30px;
+  font-weight: bold;
 }
 
 .webinar-heading {
   font-size: 20px;
-  margin-bottom: 20px;
-  padding-top: 30px;
-  padding-bottom: 50px;
+}
+
+.teamworking {
+  width: auto;
+  height: 70%;
 }
 
 .btn-container {
@@ -186,20 +195,11 @@ export default {
   background-color: #003d48; /* Scuro al passaggio del mouse */
 }
 
-.expert-title {
-  font-size: 20px;
-  font-weight: bold;
-}
-
 img {
   border-radius: 8px;
   width: 40%;
   height: auto;
   display: flex;
-}
-
-.teamworking {
-  margin-top: 20px;
 }
 
 .intro {
@@ -216,7 +216,7 @@ img {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card-img-top {
+.card-img {
   border-radius: 8px;
   width: 50%;
   height: auto;
@@ -240,20 +240,19 @@ img {
 .argomento_speaker {
   color: white;
   border-color: #004e59;
-  padding: 10px 15px;
   background-color: #004e59;
   text-decoration: none;
   font-size: 18px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 8px;
 }
 
 @media (max-width: 768px) {
   .card {
     max-width: 80%;
   }
-}
-
-.teamworking {
-  width: auto;
-  height: 70%;
 }
 </style>
