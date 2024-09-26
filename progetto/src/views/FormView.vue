@@ -22,19 +22,4 @@ export default {
   justify-content: center; /* Centra verticalmente */
   align-items: center; /* Centra orizzontalmente */
 }
-
-.iscrizione-text {
-  font-family: IBM Plex Sans JP;
-  font-size: 20px;
-  text-align: center; /* Centra il testo */
-  margin-top: 0;
-}
-
-.title {
-  font-family: IBM Plex Sans JP;
-  font-size: 40px;
-  color: black;
-  text-align: center; /* Centra il testo */
-  margin-bottom: 50px;
-}
 </style>
