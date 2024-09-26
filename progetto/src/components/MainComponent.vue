@@ -15,7 +15,11 @@
           class="img-fluid teamworking"
         />
 
-        <h3 class="webinar-subtitle" :style="{ color: headingColor }" style="margin-top: 50px;">
+        <h3
+          class="webinar-subtitle"
+          :style="{ color: headingColor }"
+          style="margin-top: 50px"
+        >
           <b>Massimizza il Tuo Potenziale</b>
         </h3>
         <p class="webinar-text">
