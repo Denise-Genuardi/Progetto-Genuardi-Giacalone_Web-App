@@ -86,7 +86,14 @@
       </div>
 
       <div class="col-12 text-center">
-        <button type="submit" class="btn invio">Invia</button>
+        <button
+          type="submit"
+          class="btn invio"
+          :class="{ 'btn-disabled': !isFormValid }"
+          :disabled="!isFormValid"
+        >
+          Invia
+        </button>
       </div>
     </form>
 
@@ -133,11 +140,18 @@ export default {
       email: "",
       azienda: "",
       numeroPartecipanti: 1,
+      headingColor: "#004e59",
     };
   },
   computed: {
     isAlertVisible() {
       return this.numeroPartecipanti < 1 || this.numeroPartecipanti > 10;
+    },
+    isFormValid() {
+      // Controllo che tutti i campi obbligatori siano riempiti
+      return (
+        this.nomeCognome && this.email && !this.isAlertVisible
+      );
     },
   },
   methods: {
@@ -152,7 +166,7 @@ export default {
       }
     },
     submitForm() {
-      if (this.isAlertVisible) return;
+      if (!this.isFormValid) return;
 
       const prenotazione = {
         nomeCognome: this.nomeCognome,
@@ -163,7 +177,7 @@ export default {
 
       this.$store.commit("AGGIUNGI_PRENOTAZIONE", prenotazione);
 
-      // Reset form fields
+      // Reset dei campi del form
       this.nomeCognome = "";
       this.email = "";
       this.azienda = "";
@@ -192,6 +206,11 @@ export default {
   padding: 10px 30px;
   background-color: #004e59;
   border-radius: 8px;
+}
+
+.btn-disabled {
+  background-color: gray !important;
+  border-color: gray !important;
 }
 
 .prenotazioni-container {

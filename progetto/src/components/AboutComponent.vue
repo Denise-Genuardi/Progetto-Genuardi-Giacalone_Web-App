@@ -86,6 +86,11 @@ export default {
   components: {
     TitleComponent,
   },
+  data(){
+    return {
+      headingColor: "#004e59",
+    }
+  }
 };
 </script>
 

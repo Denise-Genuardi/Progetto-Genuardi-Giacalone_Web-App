@@ -60,7 +60,7 @@
 
       <!-- Colonna destra -->
       <div class="col-md-4">
-        <h3 class="webinar-subtitle">
+        <h3 class="webinar-subtitle" :style="{ color: headingColor }">
           <b>I NOSTRI ESPERTI</b>
         </h3>
 
@@ -129,6 +129,7 @@ export default {
           image: require("../assets/elisa.jpg"),
         },
       ],
+      headingColor: "#004e59",
     };
   },
   methods: {
