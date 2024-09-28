@@ -26,27 +26,32 @@
       </div>
 
       <div class="col-12 col-md-5">
-        <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div
+          id="aboutCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+          aria-label="Carosello delle immagini di marketing"
+        >
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img
                 class="d-block w-100"
                 :src="require('@/assets/marketing1.png')"
-                alt="Marketing1"
+                alt="Strategia di Marketing Automation 1"
               />
             </div>
             <div class="carousel-item">
               <img
                 class="d-block w-100"
                 :src="require('@/assets/marketing2.png')"
-                alt="Marketing2"
+                alt="Strategia di Marketing Automation 2"
               />
             </div>
             <div class="carousel-item">
               <img
                 class="d-block w-100"
                 :src="require('@/assets/marketing3.png')"
-                alt="Marketing3"
+                alt="Strategia di Marketing Automation 3"
               />
             </div>
           </div>
@@ -56,6 +61,7 @@
             type="button"
             data-bs-target="#aboutCarousel"
             data-bs-slide="prev"
+            aria-label="Slide precedente"
           >
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -65,6 +71,7 @@
             type="button"
             data-bs-target="#aboutCarousel"
             data-bs-slide="next"
+            aria-label="Slide successiva"
           >
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
@@ -122,11 +129,5 @@ export default {
 .carousel img {
   max-width: 100%;
   height: auto;
-}
-
-@media (max-width: 768px) {
-  .about-component {
-    padding: 10px;
-  }
 }
 </style>

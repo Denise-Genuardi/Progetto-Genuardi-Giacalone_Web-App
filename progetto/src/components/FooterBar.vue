@@ -1,19 +1,23 @@
 <template>
   <footer class="footer">
     <div class="footer-left">
-      <img src="@/assets/Logo_Reply.png" alt="Logo" class="footer-logo" />
+      <img
+        src="@/assets/Logo_Reply.png"
+        alt="Logo aziendale di Reply"
+        class="footer-logo"
+      />
       <div class="social-icons">
         <a href="https://www.facebook.com/ReplyinUK" target="_blank">
-          <img src="@/assets/facebook.png" alt="Facebook" />
+          <img src="@/assets/facebook.png" alt="Pagina Facebook di Reply UK" />
         </a>
         <a href="https://x.com/Reply_UK" target="_blank">
-          <img src="@/assets/twitter.png" alt="X" />
+          <img src="@/assets/twitter.png" alt="Pagina X di Reply UK" />
         </a>
         <a href="https://www.linkedin.com/company/reply/" target="_blank">
-          <img src="@/assets/linkedin.png" alt="Linkedin" />
+          <img src="@/assets/linkedin.png" alt="Profilo LinkedIn di Reply" />
         </a>
         <a href="https://www.xing.com/pages/reply" target="_blank">
-          <img src="@/assets/xing.png" alt="Xing" />
+          <img src="@/assets/xing.png" alt="Profilo Xing di Reply" />
         </a>
       </div>
       <p class="copyright">© 2024 Reply. Tutti i diritti riservati.</p>
@@ -48,10 +52,6 @@ export default {
 </script>
 
 <style scoped>
-body {
-  margin: 0;
-}
-
 .footer {
   background-color: #f7f7f7;
   display: flex;
@@ -105,7 +105,7 @@ body {
 .copyright {
   margin-top: 10px;
   font-size: 0.8em;
-  color: #6c757d;
+  color: #495057;
 }
 
 ul {
@@ -113,6 +113,10 @@ ul {
   list-style-type: none;
   font-size: 15px;
   line-height: 25px;
+}
+
+a:focus {
+  outline: 2px solid #007bff;
 }
 
 @media (max-width: 768px) {
@@ -125,6 +129,19 @@ ul {
   .footer-center,
   .footer-right {
     margin: 10px;
+  }
+
+  .footer-logo {
+    width: 40%;
+  }
+
+  .social-icons img {
+    width: 20px;
+  }
+
+  .footer-center,
+  .footer-right {
+    padding: 10px;
   }
 }
 </style>

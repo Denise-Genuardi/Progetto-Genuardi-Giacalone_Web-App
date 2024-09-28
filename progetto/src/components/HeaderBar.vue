@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-md">
     <div class="container-fluid">
-      <a class="navbar-brand" @click="goToHome">
+      <a class="navbar-brand" v-on:click="goToHome">
         <img src="../assets/Logo_Reply.png" alt="logo" class="logo" />
       </a>
 

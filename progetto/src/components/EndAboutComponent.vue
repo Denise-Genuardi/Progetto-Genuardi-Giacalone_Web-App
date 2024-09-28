@@ -1,6 +1,6 @@
 <template>
   <div class="call-to-action-section">
-    <h2 class="text-center">Perchè partecipare?</h2>
+    <h2 class="text-center">Perché partecipare?</h2>
     <p class="text-center">
       Questo webinar è pensato per professionisti del marketing, imprenditori e
       chiunque sia interessato a potenziare le proprie competenze
@@ -10,7 +10,9 @@
     </p>
     <div class="text-center">
       <router-link to="/prenotazione">
-        <button class="btn-primary">Iscriviti</button>
+        <button class="btn btn-primary" aria-label="Iscriviti al webinar">
+          Iscriviti
+        </button>
       </router-link>
     </div>
   </div>
@@ -35,5 +37,18 @@ export default {
 
 .btn {
   margin-top: 20px;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+@media (max-width: 768px) {
+  .call-to-action-section {
+    padding: 20px 10px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
 }
 </style>
