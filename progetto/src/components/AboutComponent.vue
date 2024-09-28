@@ -121,7 +121,7 @@ export default {
 
 .carousel img {
   max-width: 100%;
-  height: auto; /* Aggiunto per garantire il ridimensionamento corretto */
+  height: auto;
 }
 
 @media (max-width: 768px) {
