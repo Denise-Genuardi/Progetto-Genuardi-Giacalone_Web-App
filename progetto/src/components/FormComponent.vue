@@ -79,6 +79,7 @@
               class="btn btn-outline-secondary"
               :disabled="numeroPartecipanti <= 1"
               aria-label="Decrementa il numero di partecipanti"
+              style="color: #004e59; background-color: white"
             >
               -
             </button>
@@ -91,6 +92,7 @@
               class="btn btn-outline-secondary"
               :disabled="numeroPartecipanti >= 10"
               aria-label="Incrementa il numero di partecipanti"
+              style="color: #004e59; background-color: white"
             >
               +
             </button>
@@ -221,14 +223,15 @@ export default {
 
 <style scoped>
 .form-container {
-  background-color: #004e59; /* Blu petrolio */
+  background-color: #004e59;
   padding-top: 50px;
   padding-bottom: 30px;
   margin-left: 50px;
   margin-right: 30px;
   border-radius: 8px;
-  color: white; /* Colore del testo bianco */
+  color: white;
   max-width: 1000px;
+  margin-bottom: 20px;
 }
 
 .invio {
@@ -245,7 +248,7 @@ export default {
 }
 
 .invio:hover {
-  background-color: rgba(0, 0, 0, 0.1); /* Effetto hover */
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .btn-disabled {
@@ -281,7 +284,7 @@ export default {
 
   .card {
     min-width: 420px;
-    margin: 10px 0; /* Margine per le carte su schermi piccoli */
+    margin: 10px 0;
   }
 
   .input-group .input-group-text {
