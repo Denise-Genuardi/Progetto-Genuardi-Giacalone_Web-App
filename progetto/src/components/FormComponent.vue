@@ -1,10 +1,18 @@
 <template>
-  <h3 class="webinar-subtitle" :style="{ color: headingColor }">
+  <h3
+    class="webinar-subtitle"
+    :style="{ color: headingColor }"
+    id="webinar-title"
+  >
     ISCRIVITI AL WEBINAR
   </h3>
   <TitleComponent titleText="Strategie di Marketing Automation con Reply" />
-  <div class="form-container container">
-    <form @submit.prevent="submitForm" class="row g-3">
+  <div
+    class="form-container container"
+    role="form"
+    aria-labelledby="webinar-title"
+  >
+    <form @submit.prevent="submitForm" class="row g-3" aria-required="true">
       <div class="col-12 mb-3 row">
         <label for="nome" class="col-sm-3 col-form-label text-sm-end">
           Nome e Cognome*
@@ -16,7 +24,9 @@
             id="nome"
             class="form-control"
             required
+            aria-required="true"
             placeholder="Inserisci il tuo nome e cognome"
+            aria-label="Nome e Cognome"
           />
         </div>
       </div>
@@ -32,7 +42,9 @@
             id="email"
             class="form-control"
             required
+            aria-required="true"
             placeholder="Inserisci la tua email"
+            aria-label="Email"
           />
         </div>
       </div>
@@ -48,6 +60,7 @@
             id="azienda"
             class="form-control"
             placeholder="Inserisci il nome dell'azienda"
+            aria-label="Azienda"
           />
         </div>
       </div>
@@ -57,12 +70,15 @@
           Numero Partecipanti*
         </label>
         <div class="col-sm-9">
-          <div class="input-group">
+          <div
+            class="input-group d-flex justify-content-center justify-content-sm-start"
+          >
             <button
               v-on:click="decrementaPartecipanti"
               type="button"
               class="btn btn-outline-secondary"
               :disabled="numeroPartecipanti <= 1"
+              aria-label="Decrementa il numero di partecipanti"
             >
               -
             </button>
@@ -74,6 +90,7 @@
               type="button"
               class="btn btn-outline-secondary"
               :disabled="numeroPartecipanti >= 10"
+              aria-label="Incrementa il numero di partecipanti"
             >
               +
             </button>
@@ -82,43 +99,68 @@
       </div>
 
       <div class="col-12 text-center">
-        <button v-if="isFormValid" type="submit" class="btn invio">
+        <button
+          v-if="isFormValid"
+          type="submit"
+          class="btn invio btn-white"
+          aria-label="Invia il modulo"
+        >
           Invia
         </button>
-        <button v-else type="button" class="btn invio btn-disabled" disabled>
+        <button
+          v-else
+          type="button"
+          class="btn invio btn-disabled"
+          disabled
+          aria-label="Invio disabilitato"
+        >
           Invia
         </button>
       </div>
     </form>
   </div>
 
-  <!-- Container per le prenotazioni, fuori dal form -->
   <div
     v-if="$store.state.prenotazioni.length > 0"
     class="prenotazioni-container container mt-4"
   >
-    <h3 class="mb-3">Prenotazioni:</h3>
-    <ul class="list-group">
-      <li
+    <h3 class="mb-3" style="color: white" id="prenotazioni-title">
+      Prenotazioni:
+    </h3>
+    <div class="row">
+      <div
         v-for="(prenotazione, index) in $store.state.prenotazioni"
         :key="index"
-        class="list-group-item"
+        class="col-md-6 mb-4"
       >
-        <div>
-          <strong>Nome e Cognome:</strong> {{ prenotazione.nomeCognome }}<br />
-          <strong>Email:</strong> {{ prenotazione.email }}<br />
-          <strong>Azienda:</strong> {{ prenotazione.azienda }}<br />
-          <strong>Numero Partecipanti:</strong>
-          {{ prenotazione.numeroPartecipanti }}
-        </div>
-        <button
-          v-on:click="eliminaPrenotazione(index)"
-          class="btn btn-danger btn-sm mt-2 btnelimina"
+        <div
+          class="card w-50"
+          role="alert"
+          aria-labelledby="prenotazioni-title"
         >
-          Elimina
-        </button>
-      </li>
-    </ul>
+          <div class="card-body">
+            <h5 class="card-title">
+              Grazie {{ prenotazione.nomeCognome }} per la tua prenotazione!
+            </h5>
+            <p class="card-text">
+              <strong>Nome e Cognome:</strong> {{ prenotazione.nomeCognome
+              }}<br />
+              <strong>Email:</strong> {{ prenotazione.email }}<br />
+              <strong>Azienda:</strong> {{ prenotazione.azienda }}<br />
+              <strong>Numero Partecipanti:</strong>
+              {{ prenotazione.numeroPartecipanti }}
+            </p>
+            <button
+              v-on:click="eliminaPrenotazione(index)"
+              class="btn btn-danger"
+              aria-label="Elimina la prenotazione"
+            >
+              Elimina
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -163,7 +205,7 @@ export default {
         numeroPartecipanti: this.numeroPartecipanti,
       };
 
-      this.$store.commit("AGGIUNGI_PRENOTAZIONE", prenotazione);
+      this.$store.commit("add", prenotazione);
 
       this.nomeCognome = "";
       this.email = "";
@@ -171,7 +213,7 @@ export default {
       this.numeroPartecipanti = 1;
     },
     eliminaPrenotazione(index) {
-      this.$store.commit("ELIMINA_PRENOTAZIONE", index);
+      this.$store.commit("delete", index);
     },
   },
 };
@@ -179,20 +221,31 @@ export default {
 
 <style scoped>
 .form-container {
-  background-color: #f7f7f7;
-  padding-top: 30px;
+  background-color: #004e59; /* Blu petrolio */
+  padding-top: 50px;
   padding-bottom: 30px;
+  margin-left: 50px;
+  margin-right: 30px;
   border-radius: 8px;
-  max-width: 700px;
-  margin-bottom: 50px;
+  color: white; /* Colore del testo bianco */
+  max-width: 1000px;
 }
 
 .invio {
-  color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #004e59;
   border-color: #004e59;
-  padding: 10px 30px;
-  background-color: #004e59;
+  background-color: white;
+  margin-left: 20px;
+  font-size: 20px;
   border-radius: 8px;
+}
+
+.invio:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Effetto hover */
 }
 
 .btn-disabled {
@@ -200,12 +253,13 @@ export default {
   border-color: gray !important;
 }
 
-.prenotazioni-container {
-  background-color: #f9f9f9;
-  padding: 20px;
+.card {
   border-radius: 8px;
-  border: 1px solid #ddd;
-  margin: 50px;
+  border: 1px solid grey;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-bottom: 50px;
+  min-width: 600px;
 }
 
 .input-group .input-group-text {
@@ -215,9 +269,19 @@ export default {
   width: 60px;
 }
 
+.list-group-item {
+  border: 1px;
+  margin-bottom: 20px;
+}
+
 @media (max-width: 768px) {
   .form-container {
     padding: 20px;
+  }
+
+  .card {
+    min-width: 420px;
+    margin: 10px 0; /* Margine per le carte su schermi piccoli */
   }
 
   .input-group .input-group-text {

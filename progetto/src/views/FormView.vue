@@ -18,8 +18,8 @@ export default {
 <style>
 .prenotazione {
   display: flex;
-  flex-direction: column; /* Allinea gli elementi verticalmente */
-  justify-content: center; /* Centra verticalmente */
-  align-items: center; /* Centra orizzontalmente */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 </style>

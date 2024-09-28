@@ -24,7 +24,7 @@ export default {
 
 <style scoped>
 .call-to-action-section {
-  background-color: #f7f7f7; /* Sfondo grigio chiaro */
+  background-color: #f7f7f7;
   padding: 40px 20px;
   margin-top: 40px;
 }

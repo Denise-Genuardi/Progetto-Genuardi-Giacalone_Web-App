@@ -1,7 +1,6 @@
 <template>
   <div class="container mt-5">
     <div class="row">
-      <!-- Colonna sinistra -->
       <div class="col-md-8 mb-4 intro">
         <h3 class="webinar-subtitle" :style="{ color: headingColor }">
           <b>WEBINAR</b>
@@ -58,7 +57,6 @@
         </div>
       </div>
 
-      <!-- Colonna destra -->
       <div class="col-md-4">
         <h3 class="webinar-subtitle" :style="{ color: headingColor }">
           <b>I NOSTRI ESPERTI</b>
@@ -134,10 +132,10 @@ export default {
   },
   methods: {
     goToAbout() {
-      this.$router.push("/about"); // Naviga alla pagina "about"
+      this.$router.push("/about");
     },
     subscribeNow() {
-      this.$router.push("/prenotazione"); // Naviga alla pagina di prenotazione
+      this.$router.push("/prenotazione");
     },
   },
   components: {
@@ -206,7 +204,7 @@ export default {
 }
 
 .btn-primary:hover {
-  background-color: #003d48; /* Scuro al passaggio del mouse */
+  background-color: #003d48;
 }
 
 img {

@@ -2,31 +2,25 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    prenotazioni: [], // Array delle prenotazioni inizialmente vuoto
+    prenotazioni: [],
   },
   getters: {
-    prenotazioni: (state) => state.prenotazioni, // Ritorna le prenotazioni dallo stato
+    prenotazioni: (state) => state.prenotazioni,
   },
   mutations: {
-    AGGIUNGI_PRENOTAZIONE(state, prenotazione) {
-      state.prenotazioni.push(prenotazione); // Aggiunge una prenotazione allo stato
+    add(state, prenotazione) {
+      state.prenotazioni.push(prenotazione);
     },
-    ELIMINA_PRENOTAZIONE(state, index) {
-      state.prenotazioni.splice(index, 1); // Elimina una prenotazione dallo stato
-    },
-    RESET_PRENOTAZIONI(state) {
-      state.prenotazioni = []; // Resetta tutte le prenotazioni
+    delete(state, index) {
+      state.prenotazioni.splice(index, 1);
     },
   },
   actions: {
     aggiungiPrenotazione({ commit }, prenotazione) {
-      commit("AGGIUNGI_PRENOTAZIONE", prenotazione); // Chiama la mutazione per aggiungere la prenotazione
+      commit("add", prenotazione);
     },
     eliminaPrenotazione({ commit }, index) {
-      commit("ELIMINA_PRENOTAZIONE", index); // Chiama la mutazione per eliminare la prenotazione
-    },
-    resetPrenotazioni({ commit }) {
-      commit("RESET_PRENOTAZIONI"); // Chiama la mutazione per resettare le prenotazioni
+      commit("delete", index);
     },
   },
   modules: {},

@@ -5,7 +5,6 @@
         <img src="../assets/Logo_Reply.png" alt="logo" class="logo" />
       </a>
 
-      <!-- Burger Menu -->
       <button
         class="navbar-toggler custom-toggler"
         type="button"
@@ -18,7 +17,6 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- Menu Items -->
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item no_btn">

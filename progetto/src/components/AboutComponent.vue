@@ -1,8 +1,7 @@
 <template>
   <div class="container mt-4">
     <div class="row">
-      <!-- Colonna sinistra: Titolo e Testo -->
-      <div class="col-md-7">
+      <div class="col-12 col-md-7">
         <h3 class="webinar-subtitle" :style="{ color: headingColor }">
           <b>WEBINAR</b>
         </h3>
@@ -26,8 +25,7 @@
         </p>
       </div>
 
-      <!-- Colonna destra: Carosello di immagini Bootstrap -->
-      <div class="col-md-5">
+      <div class="col-12 col-md-5">
         <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -53,7 +51,6 @@
             </div>
           </div>
 
-          <!-- Controlli del carosello -->
           <button
             class="carousel-control-prev"
             type="button"
@@ -120,12 +117,16 @@ export default {
 
 .carousel {
   margin: 20px 0;
-  width: 100%; /* Utilizza il 100% per la larghezza */
+}
+
+.carousel img {
+  max-width: 100%;
+  height: auto; /* Aggiunto per garantire il ridimensionamento corretto */
 }
 
 @media (max-width: 768px) {
   .about-component {
-    padding: 10px; /* Riduci il padding per schermi piccoli */
+    padding: 10px;
   }
 }
 </style>

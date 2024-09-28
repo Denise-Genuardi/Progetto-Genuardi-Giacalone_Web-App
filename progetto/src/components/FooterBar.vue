@@ -115,17 +115,16 @@ ul {
   line-height: 25px;
 }
 
-/* Media Queries per Responsiveness */
 @media (max-width: 768px) {
   .footer {
-    flex-direction: column; /* Rende il footer verticale su schermi piccoli */
-    align-items: center; /* Centra gli elementi */
+    flex-direction: column;
+    align-items: center;
   }
 
   .footer-left,
   .footer-center,
   .footer-right {
-    margin: 10px; /* Spazio verticale tra i blocchi */
+    margin: 10px;
   }
 }
 </style>

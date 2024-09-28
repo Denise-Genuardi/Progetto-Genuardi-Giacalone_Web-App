@@ -1,6 +1,5 @@
 <template>
   <div class="about-view">
-    <!-- Usa il componente AboutComponent -->
     <AboutComponent />
     <ProgramComponent />
     <EndAboutComponent />

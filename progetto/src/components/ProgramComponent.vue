@@ -36,17 +36,17 @@
 
 <script>
 export default {
-  name: "ProgramComponent", // Nome del componente
+  name: "ProgramComponent",
 };
 </script>
 
 <style scoped>
 .program-section {
-  margin-top: 20px; /* Margine superiore per distanziare dalla sezione sopra */
+  margin-top: 20px;
 }
 
 .text-center {
-  text-align: center; /* Allinea il titolo al centro */
-  margin-bottom: 15px; /* Spazio sotto il titolo */
+  text-align: center;
+  margin-bottom: 15px;
 }
 </style>
