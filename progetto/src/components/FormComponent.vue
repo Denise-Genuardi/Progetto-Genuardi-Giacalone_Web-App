@@ -76,10 +76,9 @@
             <button
               v-on:click="decrementaPartecipanti"
               type="button"
-              class="btn btn-outline-secondary"
+              class="btn btn-secondary increment-decrement"
               :disabled="numeroPartecipanti <= 1"
               aria-label="Decrementa il numero di partecipanti"
-              style="color: #004e59; background-color: white"
             >
               -
             </button>
@@ -89,10 +88,9 @@
             <button
               v-on:click="incrementaPartecipanti"
               type="button"
-              class="btn btn-outline-secondary"
+              class="btn btn-secondary increment-decrement"
               :disabled="numeroPartecipanti >= 10"
               aria-label="Incrementa il numero di partecipanti"
-              style="color: #004e59; background-color: white"
             >
               +
             </button>
@@ -133,10 +131,10 @@
       <div
         v-for="(prenotazione, index) in $store.state.prenotazioni"
         :key="index"
-        class="col-md-6 mb-4"
+        class="col-md-6 col-sm-12 mb-4"
       >
         <div
-          class="card w-50"
+          class="card w-100"
           role="alert"
           aria-labelledby="prenotazioni-title"
         >
@@ -228,10 +226,10 @@ export default {
   padding-bottom: 30px;
   margin-left: 50px;
   margin-right: 30px;
+  margin-bottom: 30px;
   border-radius: 8px;
   color: white;
   max-width: 1000px;
-  margin-bottom: 20px;
 }
 
 .invio {
@@ -262,7 +260,7 @@ export default {
   padding-left: 50px;
   padding-right: 50px;
   margin-bottom: 50px;
-  min-width: 600px;
+  max-width: 600px;
 }
 
 .input-group .input-group-text {
@@ -272,19 +270,22 @@ export default {
   width: 60px;
 }
 
-.list-group-item {
-  border: 1px;
-  margin-bottom: 20px;
+.increment-decrement {
+  background-color: white;
+  color: #004e59;
 }
 
 @media (max-width: 768px) {
   .form-container {
     padding: 20px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .card {
-    min-width: 420px;
-    margin: 10px 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    min-width: 400px;
   }
 
   .input-group .input-group-text {
