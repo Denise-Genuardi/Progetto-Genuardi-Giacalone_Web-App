@@ -19,9 +19,6 @@ export default {
     HeaderBar,
     FooterBar,
   },
-  return: {
-    headingColor: "#004e59",
-  },
 };
 </script>
 

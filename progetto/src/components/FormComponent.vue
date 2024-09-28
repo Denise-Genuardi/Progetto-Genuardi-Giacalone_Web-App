@@ -59,8 +59,8 @@
         <div class="col-sm-9">
           <div class="input-group">
             <button
+              v-on:click="decrementaPartecipanti"
               type="button"
-              @click="decrementaPartecipanti"
               class="btn btn-outline-secondary"
               :disabled="numeroPartecipanti <= 1"
             >
@@ -70,8 +70,8 @@
               {{ numeroPartecipanti }}
             </span>
             <button
+              v-on:click="incrementaPartecipanti"
               type="button"
-              @click="incrementaPartecipanti"
               class="btn btn-outline-secondary"
               :disabled="numeroPartecipanti >= 10"
             >
@@ -81,50 +81,44 @@
         </div>
       </div>
 
-      <div v-if="isAlertVisible" class="col-12 alert alert-danger">
-        Non è possibile prenotare meno di 1 posto o più di 10 posti
-      </div>
-
       <div class="col-12 text-center">
-        <button
-          type="submit"
-          class="btn invio"
-          :class="{ 'btn-disabled': !isFormValid }"
-          :disabled="!isFormValid"
-        >
+        <button v-if="isFormValid" type="submit" class="btn invio">
+          Invia
+        </button>
+        <button v-else type="button" class="btn invio btn-disabled" disabled>
           Invia
         </button>
       </div>
     </form>
+  </div>
 
-    <div
-      v-if="$store.state.prenotazioni.length > 0"
-      class="prenotazioni-container container mt-4"
-    >
-      <h3 class="mb-3">Prenotazioni:</h3>
-      <ul class="list-group">
-        <li
-          v-for="(prenotazione, index) in $store.state.prenotazioni"
-          :key="index"
-          class="list-group-item"
+  <!-- Container per le prenotazioni, fuori dal form -->
+  <div
+    v-if="$store.state.prenotazioni.length > 0"
+    class="prenotazioni-container container mt-4"
+  >
+    <h3 class="mb-3">Prenotazioni:</h3>
+    <ul class="list-group">
+      <li
+        v-for="(prenotazione, index) in $store.state.prenotazioni"
+        :key="index"
+        class="list-group-item"
+      >
+        <div>
+          <strong>Nome e Cognome:</strong> {{ prenotazione.nomeCognome }}<br />
+          <strong>Email:</strong> {{ prenotazione.email }}<br />
+          <strong>Azienda:</strong> {{ prenotazione.azienda }}<br />
+          <strong>Numero Partecipanti:</strong>
+          {{ prenotazione.numeroPartecipanti }}
+        </div>
+        <button
+          v-on:click="eliminaPrenotazione(index)"
+          class="btn btn-danger btn-sm mt-2 btnelimina"
         >
-          <div>
-            <strong>Nome e Cognome:</strong> {{ prenotazione.nomeCognome
-            }}<br />
-            <strong>Email:</strong> {{ prenotazione.email }}<br />
-            <strong>Azienda:</strong> {{ prenotazione.azienda }}<br />
-            <strong>Numero Partecipanti:</strong>
-            {{ prenotazione.numeroPartecipanti }}
-          </div>
-          <button
-            @click="eliminaPrenotazione(index)"
-            class="btn btn-danger btn-sm mt-2"
-          >
-            Elimina
-          </button>
-        </li>
-      </ul>
-    </div>
+          Elimina
+        </button>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -144,14 +138,8 @@ export default {
     };
   },
   computed: {
-    isAlertVisible() {
-      return this.numeroPartecipanti < 1 || this.numeroPartecipanti > 10;
-    },
     isFormValid() {
-      // Controllo che tutti i campi obbligatori siano riempiti
-      return (
-        this.nomeCognome && this.email && !this.isAlertVisible
-      );
+      return this.nomeCognome && this.email;
     },
   },
   methods: {
@@ -177,7 +165,6 @@ export default {
 
       this.$store.commit("AGGIUNGI_PRENOTAZIONE", prenotazione);
 
-      // Reset dei campi del form
       this.nomeCognome = "";
       this.email = "";
       this.azienda = "";
@@ -218,14 +205,14 @@ export default {
   padding: 20px;
   border-radius: 8px;
   border: 1px solid #ddd;
-  margin-top: 50px;
+  margin: 50px;
 }
 
 .input-group .input-group-text {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px; /* Width of the participant number display */
+  width: 60px;
 }
 
 @media (max-width: 768px) {
@@ -234,7 +221,7 @@ export default {
   }
 
   .input-group .input-group-text {
-    width: 50px; /* Adjusted width for mobile view */
+    width: 50px;
   }
 }
 </style>
