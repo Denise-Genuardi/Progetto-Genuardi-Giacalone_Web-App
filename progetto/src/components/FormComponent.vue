@@ -13,6 +13,7 @@
     aria-labelledby="webinar-title"
   >
     <form @submit.prevent="submitForm" class="row g-3" aria-required="true">
+      <!-- Form fields -->
       <div class="col-12 mb-3 row">
         <label for="nome" class="col-sm-3 col-form-label text-sm-end">
           Nome e Cognome*
@@ -65,6 +66,7 @@
         </div>
       </div>
 
+      <!-- Partecipanti -->
       <div class="col-12 mb-3 row align-items-center">
         <label for="partecipanti" class="col-sm-3 col-form-label text-sm-end">
           Numero Partecipanti*
@@ -120,6 +122,7 @@
     </form>
   </div>
 
+  <!-- Prenotazioni -->
   <div
     v-if="$store.state.prenotazioni.length > 0"
     class="prenotazioni-container container mt-4"
@@ -162,10 +165,26 @@
       </div>
     </div>
   </div>
-</template>
 
+  <!-- Modal Pop-up -->
+  <div v-if="showPopup" class="popup-overlay">
+    <div class="popup-content">
+      <h3>Conferma eliminazione</h3>
+      <p>Sei sicuro di voler cancellare la prenotazione?</p>
+      <div class="popup-buttons">
+        <button @click="confermaEliminazione" class="btn btn-danger">
+          Elimina
+        </button>
+        <button @click="annullaEliminazione" class="btn btn-secondary">
+          Annulla
+        </button>
+      </div>
+    </div>
+  </div>
+</template>
 <script>
 import TitleComponent from "@/components/TitleComponent.vue";
+
 export default {
   components: {
     TitleComponent,
@@ -177,6 +196,8 @@ export default {
       azienda: "",
       numeroPartecipanti: 1,
       headingColor: "#004e59",
+      showPopup: false,
+      indexToDelete: null,
     };
   },
   computed: {
@@ -213,12 +234,23 @@ export default {
       this.numeroPartecipanti = 1;
     },
     eliminaPrenotazione(index) {
-      this.$store.commit("delete", index);
+      this.indexToDelete = index;
+      this.showPopup = true;
+    },
+    confermaEliminazione() {
+      if (this.indexToDelete !== null) {
+        this.$store.commit("delete", this.indexToDelete);
+        this.indexToDelete = null;
+      }
+      this.showPopup = false;
+    },
+    annullaEliminazione() {
+      this.indexToDelete = null;
+      this.showPopup = false;
     },
   },
 };
 </script>
-
 <style scoped>
 .form-container {
   background-color: #004e59;
@@ -263,33 +295,41 @@ export default {
   max-width: 600px;
 }
 
-.input-group .input-group-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60px;
+.card-body {
+  color: black;
 }
 
 .increment-decrement {
+  border-radius: 0 !important;
   background-color: white;
   color: #004e59;
 }
 
-@media (max-width: 768px) {
-  .form-container {
-    padding: 20px;
-    margin-left: 0;
-    margin-right: 0;
-  }
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 
-  .card {
-    padding-left: 20px;
-    padding-right: 20px;
-    min-width: 400px;
-  }
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
 
-  .input-group .input-group-text {
-    width: 50px;
-  }
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 </style>

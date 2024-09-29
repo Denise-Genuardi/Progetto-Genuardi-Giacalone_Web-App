@@ -36,9 +36,20 @@ export default {
 }
 
 .btn {
-  margin-top: 20px;
-  font-size: 16px;
-  padding: 10px 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  border-color: #004e59;
+  background-color: #004e59;
+  margin-left: 20px;
+  font-size: 20px;
+  border-radius: 8px;
+}
+
+.btn:hover {
+  background-color: #003d48;
 }
 
 @media (max-width: 768px) {
